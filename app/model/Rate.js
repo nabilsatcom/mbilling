@@ -18,7 +18,7 @@ Ext.define('MBilling.model.Rate', {
         name: 'id_trunk_history',
         type: 'int'
     }, {
-        name: 'id_trunk_group',
+        name: 'id_trunk_group1',
         type: 'int'
     }, {
         name: 'id_trunk_group2',

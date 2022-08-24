@@ -7,7 +7,7 @@
 Ext.define('MBilling.view.trunkGroup.Lookup', {
     extend: 'Ext.ux.form.field.Lookup',
     alias: 'widget.trunkgrouplookup',
-    name: 'id_trunk_group',
+    name: 'id_trunk_group1',
     fieldLabel: t('Trunk groups 1'),
     displayField: 'idTrunkGroupname',
     displayFieldList: 'name',

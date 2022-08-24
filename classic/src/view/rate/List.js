@@ -57,7 +57,7 @@ Ext.define('MBilling.view.rate.List', {
                 xtype: 'templatecolumn',
                 tpl: '{idTrunkGroupname}',
                 header: t('Trunk groups 1'),
-                dataIndex: 'id_trunk_group',
+                dataIndex: 'id_trunk_group1',
                 comboFilter: 'trunkgroupcombo',
                 flex: 3,
                 hidden: !App.user.isAdmin || window.isTablet,

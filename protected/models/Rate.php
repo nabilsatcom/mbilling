@@ -43,7 +43,7 @@ class Rate extends Model
 
         return array(
             array('id_plan', 'required'),
-            array('id_plan, id_prefix, id_trunk_history, History_Number, id_trunk_group, id_trunk_group2, id_trunk_group3,WL1,WL2,WL3,2min,att2min,5min,att5min,15min,att15min,1h,att1h,4h,att4h,1d,att1d, initblock, billingblock, package_offer, minimal_time_charge ', 'numerical', 'integerOnly' => true),
+            array('id_plan, id_prefix, id_trunk_history, History_Number, id_trunk_group1, id_trunk_group2, id_trunk_group3,WL1,WL2,WL3,2min,att2min,5min,att5min,15min,att15min,1h,att1h,4h,att4h,1d,att1d, initblock, billingblock, package_offer, minimal_time_charge ', 'numerical', 'integerOnly' => true),
             array('rateinitial,connectcharge,disconnectcharge, additional_grace,status', 'length', 'max' => 15),
             array('FRCalled,FRCaller,FNCalled,FNCaller', 'length', 'max' => 100),
         );
@@ -56,7 +56,7 @@ class Rate extends Model
     {
 
         return array(
-            'idTrunkGroup' => array(self::BELONGS_TO, 'TrunkGroup', 'id_trunk_group'),
+            'idTrunkGroup' => array(self::BELONGS_TO, 'TrunkGroup', 'id_trunk_group1'),
             'idTrunkGroup2' => array(self::BELONGS_TO, 'TrunkGroup', 'id_trunk_group2'),
             'idTrunkGroup3' => array(self::BELONGS_TO, 'TrunkGroup', 'id_trunk_group3'),
             'idPlan'       => array(self::BELONGS_TO, 'Plan', 'id_plan'),
@@ -68,7 +68,7 @@ class Rate extends Model
     public function insertPortabilidadeRates($rates)
     {
         if (count($rates) > 0) {
-            $sql = 'INSERT INTO pkg_rate (id_prefix, id_plan, rateinitial,  id_trunk_history, History_Number, id_trunk_group, id_trunk_group2, id_trunk_group3, WL1,WL2,WL3,FRCalled, FRCaller, FNCalled, FNCaller,2min,att2min,5min,att5min,15min,att15min,1h,att1h,4h,att4h,1d,att1d, initblock, billingblock,  status) VALUES ' . implode(',', $rates) . ';';
+            $sql = 'INSERT INTO pkg_rate (id_prefix, id_plan, rateinitial,  id_trunk_history, History_Number, id_trunk_group1, id_trunk_group2, id_trunk_group3, WL1,WL2,WL3,FRCalled, FRCaller, FNCalled, FNCaller,2min,att2min,5min,att5min,15min,att15min,1h,att1h,4h,att4h,1d,att1d, initblock, billingblock,  status) VALUES ' . implode(',', $rates) . ';';
             Yii::app()->db->createCommand($sql)->execute();
         }
     }
@@ -92,7 +92,7 @@ class Rate extends Model
     {
 
         if ($userType == 1) {
-            $sqlRate = 'INSERT INTO pkg_rate (id_prefix, id_plan, rateinitial, id_trunk_history, History_Number, id_trunk_group, id_trunk_group2, id_trunk_group3,WL1,WL2,WL3,FRCalled,FRCaller,FNCalled,FNCaller,2min,att2min,5min,att5min,15min,att15min,1h,att1h,4h,att4h,1d,att1d, initblock, billingblock, status) VALUES ' . implode(',', $sqlRate) . ';';
+            $sqlRate = 'INSERT INTO pkg_rate (id_prefix, id_plan, rateinitial, id_trunk_history, History_Number, id_trunk_group1, id_trunk_group2, id_trunk_group3,WL1,WL2,WL3,FRCalled,FRCaller,FNCalled,FNCaller,2min,att2min,5min,att5min,15min,att15min,1h,att1h,4h,att4h,1d,att1d, initblock, billingblock, status) VALUES ' . implode(',', $sqlRate) . ';';
         } else {
             $sqlRate = 'INSERT INTO pkg_rate_agent (id_prefix, id_plan, rateinitial,  initblock, billingblock) VALUES ' . implode(',', $sqlRate) . ';';
         }

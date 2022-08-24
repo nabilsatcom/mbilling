@@ -25,7 +25,7 @@ class RateController extends Controller
             'pk'          => 'id',
             'fieldReport' => 'name',
         ),
-        'id_trunk_group' => array(
+        'id_trunk_group1' => array(
             'table'       => 'pkg_trunk_group',
             'pk'          => 'id',
             'fieldReport' => 'name',
@@ -54,7 +54,7 @@ class RateController extends Controller
 
     public $fieldsInvisibleClient = array(
         'additional_grace',
-        'id_trunk_group',
+        'id_trunk_group1',
         'id_trunk_group2',
         'id_trunk_group3',
         'idTrunktrunkcode',
@@ -66,7 +66,7 @@ class RateController extends Controller
 
     public $fieldsInvisibleAgent = array(
         'additional_grace',
-        'id_trunk_group',
+        'id_trunk_group1',
         'id_trunk_group2',
         'id_trunk_group3',
         'idTrunktrunkcode',
@@ -264,7 +264,7 @@ class RateController extends Controller
             " CHARACTER SET UTF8 " .
             " FIELDS TERMINATED BY '" . $values['delimiter'] . "'" .
             " LINES TERMINATED BY '\\r\\n' (dialprefix,destination,rateinitial,initblock,billingblock,minimal_time_charge,connectcharge,disconnectcharge,package_offer)" .
-            " SET id_plan = " . $values['id_plan'] . ", id_trunk_group = " . $values['id_trunk_group'] . ", id_trunk_group2 = " . $values['id_trunk_group2'] . ", id_trunk_group3 = " . $values['id_trunk_group3'] . ", id_prefix = " . $modelPrefix->id . "";
+            " SET id_plan = " . $values['id_plan'] . ", id_trunk_group1 = " . $values['id_trunk_group1'] . ", id_trunk_group2 = " . $values['id_trunk_group2'] . ", id_trunk_group3 = " . $values['id_trunk_group3'] . ", id_prefix = " . $modelPrefix->id . "";
 
             try {
                 Yii::app()->db->createCommand($sql)->execute();

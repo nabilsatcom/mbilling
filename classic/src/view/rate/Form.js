@@ -82,7 +82,7 @@
                     items: [{
                         xtype: 'trunkgrouplookup',
                         ownerForm: me,
-                        name: 'id_trunk_group',
+                        name: 'id_trunk_group1',
                         fieldLabel: t('Trunk groups 1'),
                         flex: 4
                     }, {
