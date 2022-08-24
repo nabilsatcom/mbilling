@@ -922,9 +922,45 @@ class CalcAgi
                     $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
         
                 } else if ($this->tariffObj[0]['trunk_group_type'] == 2) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 30 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 3) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 1 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 4) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 2 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 5) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 3 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 6) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 5 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 7) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 8) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 15 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 9) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 20 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 10) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 30 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+                
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 11) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 1 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 12) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 2 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 13) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 3 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 14) {
                     $sql = "SELECT * FROM ( SELECT C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY starttime ASC";
         
-                } else if ($this->tariffObj[0]['trunk_group_type'] == 3) {
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 15) {
                     $sql = "SELECT *, (SELECT buyrate FROM pkg_rate_provider WHERE id_provider = tr.id_provider AND id_prefix = " . $this->tariffObj[0]['id_prefix'] . " LIMIT 1) AS buyrate  FROM pkg_trunk_group_trunk t  JOIN pkg_trunk tr ON t.id_trunk = tr.id WHERE id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . " ORDER BY buyrate IS NULL , buyrate ";
                 }
                 $modelTrunks = $agi->query($sql)->fetchAll(PDO::FETCH_OBJ);
@@ -984,16 +1020,54 @@ class CalcAgi
                     /* NUMBER AUHTORIZED*/
                     $agi->verbose("NUMBER AUHTORIZED", 1);
 
+
                     if ($this->tariffObj[0]['trunk_group_type'] == 1) {
                         $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
             
                     } else if ($this->tariffObj[0]['trunk_group_type'] == 2) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 30 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 3) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 1 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 4) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 2 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 5) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 3 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 6) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 5 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 7) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 8) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 15 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 9) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 20 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 10) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 30 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+                    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 11) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 1 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 12) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 2 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 13) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 3 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 14) {
                         $sql = "SELECT * FROM ( SELECT C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY starttime ASC";
             
-                    } else if ($this->tariffObj[0]['trunk_group_type'] == 3) {
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 15) {
                         $sql = "SELECT *, (SELECT buyrate FROM pkg_rate_provider WHERE id_provider = tr.id_provider AND id_prefix = " . $this->tariffObj[0]['id_prefix'] . " LIMIT 1) AS buyrate  FROM pkg_trunk_group_trunk t  JOIN pkg_trunk tr ON t.id_trunk = tr.id WHERE id_trunk_group = " . $this->tariffObj[0]['id_trunk_group1'] . " ORDER BY buyrate IS NULL , buyrate ";
                     }
                     $modelTrunks = $agi->query($sql)->fetchAll(PDO::FETCH_OBJ);
+
             
                     foreach ($modelTrunks as $key => $trunk) {
             
@@ -1100,13 +1174,49 @@ class CalcAgi
                     $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
         
                 } else if ($this->tariffObj[0]['trunk_group_type'] == 2) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 30 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 3) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 1 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 4) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 2 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 5) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 3 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 6) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 5 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 7) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 8) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 15 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 9) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 20 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 10) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 30 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+                
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 11) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 1 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 12) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 2 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 13) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 3 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 14) {
                     $sql = "SELECT * FROM ( SELECT C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY starttime ASC";
         
-                } else if ($this->tariffObj[0]['trunk_group_type'] == 3) {
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 15) {
                     $sql = "SELECT *, (SELECT buyrate FROM pkg_rate_provider WHERE id_provider = tr.id_provider AND id_prefix = " . $this->tariffObj[0]['id_prefix'] . " LIMIT 1) AS buyrate  FROM pkg_trunk_group_trunk t  JOIN pkg_trunk tr ON t.id_trunk = tr.id WHERE id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . " ORDER BY buyrate IS NULL , buyrate ";
                 }
                 $modelTrunks = $agi->query($sql)->fetchAll(PDO::FETCH_OBJ);
-        
+    
                 foreach ($modelTrunks as $key => $trunk) {
         
                     $sql        = "SELECT *, pkg_trunk.id id  FROM pkg_trunk JOIN pkg_provider ON id_provider = pkg_provider.id WHERE pkg_trunk.id = " . $trunk->id_trunk . " LIMIT 1";
@@ -1164,9 +1274,45 @@ class CalcAgi
                         $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
             
                     } else if ($this->tariffObj[0]['trunk_group_type'] == 2) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 30 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 3) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 1 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 4) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 2 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 5) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 3 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 6) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 5 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 7) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 8) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 15 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 9) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 20 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 10) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 30 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+                    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 11) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 1 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 12) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 2 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 13) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 3 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 14) {
                         $sql = "SELECT * FROM ( SELECT C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY starttime ASC";
             
-                    } else if ($this->tariffObj[0]['trunk_group_type'] == 3) {
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 15) {
                         $sql = "SELECT *, (SELECT buyrate FROM pkg_rate_provider WHERE id_provider = tr.id_provider AND id_prefix = " . $this->tariffObj[0]['id_prefix'] . " LIMIT 1) AS buyrate  FROM pkg_trunk_group_trunk t  JOIN pkg_trunk tr ON t.id_trunk = tr.id WHERE id_trunk_group = " . $this->tariffObj[0]['id_trunk_group2'] . " ORDER BY buyrate IS NULL , buyrate ";
                     }
                     $modelTrunks = $agi->query($sql)->fetchAll(PDO::FETCH_OBJ);
@@ -1274,13 +1420,49 @@ class CalcAgi
                     $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
         
                 } else if ($this->tariffObj[0]['trunk_group_type'] == 2) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 30 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 3) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 1 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 4) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 2 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 5) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 3 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 6) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 5 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 7) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 8) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 15 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 9) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 20 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 10) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 30 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+                
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 11) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 1 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 12) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 2 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 13) {
+                    $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 3 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 14) {
                     $sql = "SELECT * FROM ( SELECT C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY starttime ASC";
         
-                } else if ($this->tariffObj[0]['trunk_group_type'] == 3) {
+                } else if ($this->tariffObj[0]['trunk_group_type'] == 15) {
                     $sql = "SELECT *, (SELECT buyrate FROM pkg_rate_provider WHERE id_provider = tr.id_provider AND id_prefix = " . $this->tariffObj[0]['id_prefix'] . " LIMIT 1) AS buyrate  FROM pkg_trunk_group_trunk t  JOIN pkg_trunk tr ON t.id_trunk = tr.id WHERE id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . " ORDER BY buyrate IS NULL , buyrate ";
                 }
                 $modelTrunks = $agi->query($sql)->fetchAll(PDO::FETCH_OBJ);
-        
+    
                 foreach ($modelTrunks as $key => $trunk) {
         
                     $sql        = "SELECT *, pkg_trunk.id id  FROM pkg_trunk JOIN pkg_provider ON id_provider = pkg_provider.id WHERE pkg_trunk.id = " . $trunk->id_trunk . " LIMIT 1";
@@ -1338,9 +1520,45 @@ class CalcAgi
                         $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
             
                     } else if ($this->tariffObj[0]['trunk_group_type'] == 2) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 30 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 3) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 1 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 4) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 2 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 5) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 3 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 6) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 5 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 7) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 8) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 15 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 9) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 20 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 10) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 30 MINUTE AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+                    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 11) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 1 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 12) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 2 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 13) {
+                        $sql = "SELECT * FROM ( SELECT C.id, C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 3 HOUR AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY CO.id ASC";
+    
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 14) {
                         $sql = "SELECT * FROM ( SELECT C.id_trunk, O.trunkcode, id_trunk_group, starttime FROM pkg_trunk_group_trunk C INNER JOIN pkg_trunk O ON C.id_trunk = O.id WHERE starttime <= NOW() - INTERVAL 10 SECOND AND id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . ") AS CO LEFT OUTER JOIN pkg_call_online D ON CO.trunkcode = D.tronco WHERE D.tronco IS NULL ORDER BY starttime ASC";
             
-                    } else if ($this->tariffObj[0]['trunk_group_type'] == 3) {
+                    } else if ($this->tariffObj[0]['trunk_group_type'] == 15) {
                         $sql = "SELECT *, (SELECT buyrate FROM pkg_rate_provider WHERE id_provider = tr.id_provider AND id_prefix = " . $this->tariffObj[0]['id_prefix'] . " LIMIT 1) AS buyrate  FROM pkg_trunk_group_trunk t  JOIN pkg_trunk tr ON t.id_trunk = tr.id WHERE id_trunk_group = " . $this->tariffObj[0]['id_trunk_group3'] . " ORDER BY buyrate IS NULL , buyrate ";
                     }
                     $modelTrunks = $agi->query($sql)->fetchAll(PDO::FETCH_OBJ);
