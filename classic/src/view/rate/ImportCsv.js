@@ -5,13 +5,6 @@
  * ###################################
  * MagnusBilling
  *
- * @package MagnusBilling
- * @author  Adilson Leffa Magnus.
- * @copyright   Todos os direitos reservados.
- * ###################################
- * =======================================
- * MagnusSolution.com <info@magnussolution.com>
- * 08/11/2012
  */
 Ext.define('MBilling.view.rate.ImportCsv', {
     extend: 'Ext.ux.window.ImportCsv',
@@ -29,7 +22,19 @@ Ext.define('MBilling.view.rate.ImportCsv', {
         }, {
             xtype: 'trunkgroupcombo',
             name: 'id_trunk_group',
-            fieldLabel: t('Trunk groups'),
+            fieldLabel: t('Trunk groups 1'),
+            width: 350,
+            hidden: !App.user.isAdmin
+        }, {
+            xtype: 'trunkgroupcombo',
+            name: 'id_trunk_group2',
+            fieldLabel: t('Trunk groups 2'),
+            width: 350,
+            hidden: !App.user.isAdmin
+        }, {
+            xtype: 'trunkgroupcombo',
+            name: 'id_trunk_group3',
+            fieldLabel: t('Trunk groups 3'),
             width: 350,
             hidden: !App.user.isAdmin
         }, {

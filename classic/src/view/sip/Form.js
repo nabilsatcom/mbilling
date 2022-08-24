@@ -18,7 +18,7 @@
  * Magnusbilling.org <info@magnussolution.com>
  * 25/06/2012
  */
-Ext.define('MBilling.view.sip.Form', {
+ Ext.define('MBilling.view.sip.Form', {
     extend: 'Ext.ux.form.Panel',
     uses: ['Ext.ux.form.field.DateTime'],
     alias: 'widget.sipform',

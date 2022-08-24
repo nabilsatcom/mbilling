@@ -5,18 +5,6 @@
  * ###################################
  * MagnusBilling
  *
- * @package MagnusBilling
- * @author Adilson Leffa Magnus.
- * @copyright Copyright (C) 2005 - 2021 MagnusBilling. All rights reserved.
- * ###################################
- *
- * This software is released under the terms of the GNU Lesser General Public License v3
- * A copy of which is available from http://www.gnu.org/copyleft/lesser.html
- *
- * Please submit bug reports, patches, etc to https://github.com/magnusbilling/mbilling/issues
- * =======================================
- * Magnusbilling.com <info@magnusbilling.com>
- * 30/07/2012
  */
 Ext.define('MBilling.model.Rate', {
     extend: 'Ext.data.Model',
@@ -27,8 +15,65 @@ Ext.define('MBilling.model.Rate', {
         name: 'id_plan',
         type: 'int'
     }, {
+        name: 'id_trunk_history',
+        type: 'int'
+    }, {
         name: 'id_trunk_group',
         type: 'int'
+    }, {
+        name: 'id_trunk_group2',
+        type: 'int'
+    }, {
+        name: 'id_trunk_group3',
+        type: 'int'
+    }, {
+        name: 'FNCalled',
+        type: 'string'
+    }, {
+        name: 'FNCaller',
+        type: 'string'
+    }, {
+        name: 'FRCalled',
+        type: 'string'
+    }, {
+        name: 'FRCaller',
+        type: 'string'
+    }, {
+        name: '2min',
+        type: 'string'
+    }, {
+        name: 'att2min',
+        type: 'string'
+    }, {
+        name: '5min',
+        type: 'string'
+    }, {
+        name: 'att5min',
+        type: 'string'
+    }, {
+        name: '15min',
+        type: 'string'
+    }, {
+        name: 'att15min',
+        type: 'string'
+    }, {
+        name: '1h',
+        type: 'string'
+    }, {
+        name: 'att4h',
+        type: 'string'
+    }, {
+        name: '4h',
+        type: 'string'
+    }, {
+        name: 'att1h',
+        type: 'string'
+    }, {
+        name: '1d',
+        type: 'string'
+    }, {
+        name: 'att1d',
+        type: 'string'
     }, {
         name: 'id_prefix',
         type: 'int'
@@ -62,7 +107,7 @@ Ext.define('MBilling.model.Rate', {
     }, {
         name: 'status',
         type: 'int'
-    }, 'idPrefixdestination', 'idPrefixprefix', 'idTrunkGroupname', 'idPlanname'],
+    }, 'idPrefixdestination', 'idPrefixprefix', 'idTrunkGroupname', 'idTrunkGroup2name', 'idTrunkGroup3name', 'idPlanname'],
     proxy: {
         type: 'uxproxy',
         module: 'rate'

@@ -4,7 +4,7 @@
  * MagnusSolution.com <info@magnussolution.com>
  * 18/04/2012
  */
-Ext.define('MBilling.view.sip.Module', {
+ Ext.define('MBilling.view.sip.Module', {
     extend: 'Ext.ux.panel.Module',
     alias: 'widget.sipmodule',
     controller: 'sip',

@@ -55,7 +55,7 @@ class CallFailed extends Model
         return array(
             array('id_user, calledstation', 'required'),
             array('id_user, id_plan, id_trunk, id_server, sipiax, terminatecauseid,hangupcause', 'numerical', 'integerOnly' => true),
-            array('uniqueid, starttime, callerid, src, calledstation', 'length', 'max' => 50),
+            array('uniqueid, starttime, endtime, callerid, src, calledstation', 'length', 'max' => 50),
         );
     }
 
@@ -80,6 +80,7 @@ class CallFailed extends Model
               `id_prefix` int(11) DEFAULT NULL,
               `uniqueid` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
               `starttime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+              `endtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
               `calledstation` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
               `sipiax` int(11) DEFAULT '0',
               `src` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,

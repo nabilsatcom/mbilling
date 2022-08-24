@@ -1,20 +1,9 @@
 <?php
+
 /**
  * =======================================
  * ###################################
  * MagnusBilling
- *
- * @package MagnusBilling
- * @author Adilson Leffa Magnus.
- * @copyright Copyright (C) 2005 - 2021 MagnusSolution. All rights reserved.
- * ###################################
- *
- * This software is released under the terms of the GNU Lesser General Public License v2.1
- * A copy of which is available from http://www.gnu.org/copyleft/lesser.html
- *
- * Please submit bug reports, patches, etc to https://github.com/magnusbilling/mbilling/issues
- * =======================================
- * Magnusbilling.com <info@magnusbilling.com>
  *
  */
 class Magnus
@@ -43,6 +32,7 @@ class Magnus
     public $removeinterprefix = 1;
     public $restriction       = 1;
     public $restriction_use   = 1;
+    public $FRCalled       = 1;
     public $redial;
     public $enableexpire;
     public $expirationdate;
@@ -700,15 +690,11 @@ class Magnus
 
             if (preg_match("/" . $this->modelSip->block_call_reg . "/", $destination)) {
                 $agi->verbose("NUMBER NOT AUHTORIZED - NOT ALLOW TO CALL BY REGEX SIP ACCOUNT " . $this->sip_account, 1);
-                if ($this->play_audio == 1) {
-                    $agi->answer();
-                    $agi->stream_file('prepaid-dest-unreachable', '#');
-                } else {
-                    $agi->execute((congestion), Congestion);
-                }
+                $agi->execute((congestion), Congestion);
                 $this->hangup($agi);
             }
         }
+
         if ($this->restriction == 1 || $this->restriction == 2) {
             /*Check if Account have restriction*/
 

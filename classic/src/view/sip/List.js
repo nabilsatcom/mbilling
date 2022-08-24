@@ -18,7 +18,7 @@
  * Magnusbilling.org <info@magnussolution.com>
  * 25/06/2012
  */
-Ext.define('MBilling.view.sip.List', {
+ Ext.define('MBilling.view.sip.List', {
     extend: 'Ext.ux.grid.Panel',
     alias: 'widget.siplist',
     store: 'Sip',

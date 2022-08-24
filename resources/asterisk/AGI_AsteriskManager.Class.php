@@ -1,5 +1,7 @@
 <?php
+
  /**
+  * 
   * phpagi-asmanager.php : PHP Asterisk Manager functions
   * Website: http://phpagi.sourceforge.net
   *

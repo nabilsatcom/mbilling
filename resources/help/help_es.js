@@ -502,7 +502,11 @@ You can use the button "process" to reactivate the numbers with pending status.`
     //TARIFFS
     'rate.id_plan': `The plan that you want to create a tariff for.`,
     'rate.id_prefix': `The prefix that you want create a tariff for.`,
+    'rate.id_trunk_history': `History Calls.`,
+    'rate.id_History_Number': `History Number.`,
     'rate.id_trunk_group': `The group of trunks that will be used to send this call.`,
+    'rate.id_trunk_group2': `The group of trunks that will be used to send this call.`,
+    'rate.id_trunk_group3': `The group of trunks that will be used to send this call.`,
     'rate.rateinitial': `The amount that you want to charge per minute.`,
     'rate.initblock': `Minimum time in seconds to buy. E.g., if set to 30s and the call duration is 21s, will be charged for 30s.`,
     'rate.billingblock': `This defines how the time is incremented after the minimum. E.g, if set to 6s and call duration is 32s, will becharged for 36.`,

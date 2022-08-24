@@ -1,8 +1,7 @@
 /**
  * Class to define tag of "trunk"
  *
- * Adilson L. Magnus <info@magnussolution.com> 
- * 15/04/2013
+ * 
  */
 Ext.define('MBilling.view.trunk.Tag', {
     extend: 'Ext.form.field.Tag',

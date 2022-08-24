@@ -27,6 +27,10 @@ Ext.define('MBilling.model.RestrictedPhonenumber', {
         name: 'id_user',
         type: 'int'
     }, {
+        name: 'starttime',
+        type: 'date',
+        dateFormat: 'Y-m-d H:i:s'
+    }, {
         name: 'direction',
         type: 'int'
     }, {

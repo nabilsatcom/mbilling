@@ -24,21 +24,15 @@ Ext.define('MBilling.view.did.List', {
     store: 'Did',
     fieldSearch: 'did',
     buttonImportCsv: true,
+    extraButtons: [{
+        text: t('Release DID'),
+        iconCls: 'icon-delete',
+        handler: 'onRelease',
+        disabled: false
+    }],
     initComponent: function() {
         var me = this;
         me.buttonUpdateLot = false;
-        me.extraButtons = [{
-            text: t('Buy DID'),
-            iconCls: 'x-fa fa-shopping-cart',
-            handler: 'onBuy',
-            hidden: !App.user.isClient,
-            disabled: false
-        }, {
-            text: t('Release DID'),
-            iconCls: 'icon-delete',
-            handler: 'onRelease',
-            disabled: false
-        }];
         if (App.user.isClient) {
             me.buttonImportCsv = false;
         }
@@ -63,7 +57,9 @@ Ext.define('MBilling.view.did.List', {
                     [1, t('Yes')],
                     [0, t('No')]
                 ]
-            }
+            },
+            hidden: App.user.isClient,
+            hideable: !App.user.isClient
         }, {
             header: t('Username'),
             dataIndex: 'idUserusername',
@@ -71,8 +67,6 @@ Ext.define('MBilling.view.did.List', {
                 type: 'string',
                 field: 'idUser.username'
             },
-            hidden: App.user.isClient,
-            hideable: !App.user.isClient,
             flex: 3
         }, {
             header: t('Status'),
@@ -102,12 +96,7 @@ Ext.define('MBilling.view.did.List', {
             header: t('Time used'),
             renderer: Helper.Util.formatsecondsToTime,
             dataIndex: 'secondusedreal',
-            hidden: !App.user.isAdmin,
             flex: 3
-        }, {
-            header: t('Country'),
-            dataIndex: 'country',
-            flex: 2
         }, {
             header: t('Description'),
             dataIndex: 'description',

@@ -24,9 +24,19 @@ Ext.define('MBilling.model.CampaignRestrictPhone', {
         name: 'id',
         type: 'int'
     }, {
+        name: 'id_user',
+        type: 'int'
+    }, {
+        name: 'starttime',
+        type: 'date',
+        dateFormat: 'Y-m-d H:i:s'
+    }, {
+        name: 'direction',
+        type: 'int'
+    }, {
         name: 'number',
         type: 'string'
-    }],
+    }, 'idUserusername'],
     proxy: {
         type: 'uxproxy',
         module: 'campaignRestrictPhone'

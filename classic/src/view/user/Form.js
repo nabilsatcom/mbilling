@@ -1,8 +1,6 @@
 /**
  * Class to define form to "User"
  *
- * Adilson L. Magnus <info@magnussolution.com> 
- * 15/04/2013
  */
 Ext.define('MBilling.view.user.Form', {
     extend: 'Ext.ux.form.Panel',
@@ -414,38 +412,6 @@ Ext.define('MBilling.view.user.Form', {
                     minValue: 100000,
                     maxLength: 6,
                     minLength: 6
-                }, {
-                    xtype: 'fieldcontainer',
-                    layout: 'hbox',
-                    hidden: App.user.isClient,
-                    defaults: {
-                        xtype: 'textfield',
-                        labelAlign: 'right',
-                        labelWidth: 145,
-                        flex: 1
-                    },
-                    items: [{
-                        xtype: 'restrictioncombo',
-                        name: 'restriction',
-                        fieldLabel: t('Restriction'),
-                        allowBlank: true,
-                        flex: 2
-                    }, {
-                        xtype: 'combobox',
-                        name: 'restriction_use',
-                        fieldLabel: t('Use'),
-                        forceSelection: true,
-                        editable: false,
-                        hidden: true,
-                        value: '1',
-                        store: [
-                            [1, t('Dial Number')],
-                            [2, t('CallerID')],
-                            [3, t('Bouth')]
-                        ],
-                        labelWidth: 80,
-                        flex: 2
-                    }]
                 }]
             }, {
                 title: window.showservices ? t('Services') : t('Send credit'),

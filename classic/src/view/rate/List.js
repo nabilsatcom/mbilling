@@ -5,18 +5,6 @@
  * ###################################
  * MagnusBilling
  *
- * @package MagnusBilling
- * @author Adilson Leffa Magnus.
- * @copyright Copyright (C) 2005 - 2021 MagnusBilling. All rights reserved.
- * ###################################
- *
- * This software is released under the terms of the GNU Lesser General Public License v3
- * A copy of which is available from http://www.gnu.org/copyleft/lesser.html
- *
- * Please submit bug reports, patches, etc to https://github.com/magnussolution/magnusbilling7/issues
- * =======================================
- * Magnusbilling.org <info@magnussolution.com>
- * 30/07/2012
  */
 Ext.define('MBilling.view.rate.List', {
     extend: 'Ext.ux.grid.Panel',
@@ -68,8 +56,26 @@ Ext.define('MBilling.view.rate.List', {
             }, {
                 xtype: 'templatecolumn',
                 tpl: '{idTrunkGroupname}',
-                header: t('Trunk groups'),
+                header: t('Trunk groups 1'),
                 dataIndex: 'id_trunk_group',
+                comboFilter: 'trunkgroupcombo',
+                flex: 3,
+                hidden: !App.user.isAdmin || window.isTablet,
+                hideable: App.user.isAdmin
+            }, {
+                xtype: 'templatecolumn',
+                tpl: '{idTrunkGroup2name}',
+                header: t('Trunk groups 2'),
+                dataIndex: 'id_trunk_group2',
+                comboFilter: 'trunkgroupcombo',
+                flex: 3,
+                hidden: !App.user.isAdmin || window.isTablet,
+                hideable: App.user.isAdmin
+            }, {
+                xtype: 'templatecolumn',
+                tpl: '{idTrunkGroup3name}',
+                header: t('Trunk groups 3'),
+                dataIndex: 'id_trunk_group3',
                 comboFilter: 'trunkgroupcombo',
                 flex: 3,
                 hidden: !App.user.isAdmin || window.isTablet,

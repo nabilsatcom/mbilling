@@ -4,15 +4,8 @@
  *
  * =======================================
  * ###################################
- * MagnusBilling
+ * 
  *
- * @package MagnusBilling
- * @author Adilson Leffa Magnus.
- * @copyright Todos os direitos reservados.
- * ###################################
- * =======================================
- * Magnusbilling.com <info@magnusbilling.com>
- * 23/06/2012
  */
 
 class SipController extends Controller
@@ -316,71 +309,4 @@ class SipController extends Controller
             'sipshowpeer' => Yii::app()->session['isAdmin'] ? print_r($sipShowPeer, true) : '',
         ));
     }
-
-    public function actionBulk()
-    {
-        $values = $this->getAttributesRequest();
-        if (Yii::app()->session['user_type'] == 3) {
-            exit;
-        }
-
-        $secret = $_POST['secret'] == "Leave blank to auto generate" ? '' : $_POST['secret'];
-
-        if (strlen($secret) > 0 && strlen($secret) < 6 && strlen($secret) < 25) {
-            echo json_encode(array(
-                'success'      => false,
-                $this->nameMsg => 'Password lenght need be > 5 or blank.',
-            ));
-            exit;
-        }
-
-        if (preg_match('/ /', $secret)) {
-            echo json_encode(array(
-                'success'      => false,
-                $this->nameMsg => 'No space allow in password',
-            ));
-            exit;
-        }
-
-        if ($secret == '123456' || $secret == '12345678' || $secret == '012345') {
-            echo json_encode(array(
-                'success'      => false,
-                $this->nameMsg => 'No use sequence in the password',
-            ));
-            exit;
-        }
-
-        $modelUser = User::model()->findByPk((int) $_POST['id_user']);
-
-        if ($modelUser->idGroup->idUserType->id != 3) {
-            return;
-        }
-
-        for ($i = 0; $i < $values['totalToCreate']; $i++) {
-
-            if (strlen($secret) < 5) {
-
-                $secret = Util::generatePassword(8, true, true, true, false);
-            }
-
-            $user                  = Util::getNewSip();
-            $modelSip              = new Sip();
-            $modelSip->id_user     = $modelUser->id;
-            $modelSip->name        = $user;
-            $modelSip->allow       = $this->config['global']['default_codeds'];
-            $modelSip->host        = 'dynamic';
-            $modelSip->insecure    = 'no';
-            $modelSip->defaultuser = $user;
-            $modelSip->secret      = $secret;
-            $modelSip->save();
-        }
-
-        AsteriskAccess::instance()->generateSipPeers();
-
-        echo json_encode(array(
-            $this->nameSuccess => true,
-            $this->nameMsg     => $this->msgSuccess,
-        ));
-    }
-
 }

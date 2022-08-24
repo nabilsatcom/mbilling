@@ -63,13 +63,13 @@ class User extends Model
         return array(
             array('username, password', 'required'),
             array('id_user, id_group, id_plan, id_offer, active, enableexpire, expiredays,
-                    typepaid, creditlimit, credit_notification,sipaccountlimit, restriction,
+                    typepaid, creditlimit, credit_notification,sipaccountlimit,
                     callingcard_pin, callshop, plan_day, active_paypal, boleto,
                     boleto_day, calllimit, disk_space,id_group_agent,transfer_dbbl_rocket_profit,
                     transfer_bkash_profit,transfer_flexiload_profit,transfer_international_profit,
                     transfer_dbbl_rocket,transfer_bkash,transfer_flexiload,transfer_international,
                     transfer_bdservice_rate,transfer_show_selling_price,cpslimit,
-                    restriction_use,credit_notification_daily
+                    credit_notification_daily
                         ', 'numerical', 'integerOnly' => true),
             array('language,mix_monitor_format,calllimit_error', 'length', 'max' => 5),
             array('username, zipcode, phone, mobile, vat', 'length', 'max' => 20),
@@ -120,8 +120,6 @@ class User extends Model
         if ($this->getIsNewRecord()) {
             $this->creationdate = date('Y-m-d H:i:s');
         }
-
-        $this->contract_value = $this->contract_value == '' ? 0 : $this->contract_value;
 
         return parent::beforeSave();
     }

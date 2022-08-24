@@ -18,7 +18,7 @@
  * Magnusbilling.org <info@magnussolution.com>
  * 01/10/2013
  */
-Ext.define('MBilling.view.sip.Controller', {
+ Ext.define('MBilling.view.sip.Controller', {
     extend: 'Ext.ux.app.ViewController',
     alias: 'controller.sip',
     init: function() {

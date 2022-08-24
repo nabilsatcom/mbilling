@@ -1,4 +1,5 @@
 <?php
+
 /**
  * =======================================
  * ###################################
@@ -392,7 +393,7 @@ class AuthenticateAgi
             $sipAccounts = substr($sipAccounts, 0, -1);
             $calls       = 0;
             foreach ($channelsData as $key => $line) {
-                if (preg_match("/^SIP\/($sipAccounts)-.*(Ring|Up)/", $line) && !preg_match("/Outgoing Line/", $line)) {
+                if (preg_match("/^SIP\/($sipAccounts)-.*(Ring|Up)/", $line)) {
                     $calls++;
                 }
             }

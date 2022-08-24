@@ -3,28 +3,6 @@ Ext.define('MBilling.view.user.Controller', {
     requires: ['MBilling.view.userType.Combo'],
     alias: 'controller.user',
     groupIsAdmin: false,
-    init: function() {
-        var me = this;
-        me.control({
-            'groupusercombo': {
-                select: me.onSelectType
-            },
-            'restrictioncombo[name=restriction]': {
-                select: me.onSelectTypeRestriction
-            }
-        });
-        me.callParent(arguments);
-    },
-    onSelectTypeRestriction: function(combo, records) {
-        var me = this,
-            fieldUse = me.formPanel.getForm().findField('restriction_use'),
-            fieldRestriction = me.formPanel.getForm().findField('restriction');
-        if (window.restrictionuser && fieldRestriction.getValue() == 1) {
-            fieldUse.setVisible(true);
-        } else {
-            fieldUse.setVisible(false);
-        }
-    },
     onSelectType: function(combo, records) {
         this.showFieldsRelated(records.getData().showFields);
     },
@@ -121,16 +99,10 @@ Ext.define('MBilling.view.user.Controller', {
             fieldCreditNot = record.get('credit_notification'),
             fieldCallshop = record.get('callshop'),
             fieldLock_pin = record.get('lock_pin'),
-            fieldRestriction = record.get('restriction'),
             fieldPasswordGen = record.get('password'),
             fieldCallingcard_pin = record.get('callingcard_pin'),
             fieldGroupAgent = me.formPanel.getForm().findField('id_group_agent'),
             fieldGroup = me.formPanel.getForm().findField('id_group');
-        if (window.restrictionuser && record.get('restriction') == 1) {
-            me.formPanel.getForm().findField('restriction_use')['show']();
-        } else {
-            me.formPanel.getForm().findField('restriction_use')['hide']();
-        }
         if (App.user.isAdmin) {
             if (record.get('id_user') > 1) {
                 me.formPanel.getForm().findField('id_plan')['hide']();

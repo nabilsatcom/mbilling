@@ -6,18 +6,6 @@
  * ###################################
  * MagnusBilling
  *
- * @package MagnusBilling
- * @author Adilson Leffa Magnus.
- * @copyright Copyright (C) 2005 - 2021 MagnusSolution. All rights reserved.
- * ###################################
- *
- * This software is released under the terms of the GNU Lesser General Public License v2.1
- * A copy of which is available from http://www.gnu.org/copyleft/lesser.html
- *
- * Please submit bug reports, patches, etc to https://github.com/magnusbilling/mbilling/issues
- * =======================================
- * Magnusbilling.com <info@magnusbilling.com>
- * 30/07/2012
  */
 
 class RateController extends Controller
@@ -25,6 +13,8 @@ class RateController extends Controller
     public $attributeOrder = 't.id';
     public $extraValues    = array(
         'idTrunkGroup' => 'name',
+        'idTrunkGroup2' => 'name',
+        'idTrunkGroup3' => 'name',
         'idPlan'       => 'name',
         'idPrefix'     => 'destination,prefix',
     );
@@ -36,6 +26,16 @@ class RateController extends Controller
             'fieldReport' => 'name',
         ),
         'id_trunk_group' => array(
+            'table'       => 'pkg_trunk_group',
+            'pk'          => 'id',
+            'fieldReport' => 'name',
+        ),
+        'id_trunk_group2' => array(
+            'table'       => 'pkg_trunk_group',
+            'pk'          => 'id',
+            'fieldReport' => 'name',
+        ),
+        'id_trunk_group3' => array(
             'table'       => 'pkg_trunk_group',
             'pk'          => 'id',
             'fieldReport' => 'name',
@@ -55,6 +55,8 @@ class RateController extends Controller
     public $fieldsInvisibleClient = array(
         'additional_grace',
         'id_trunk_group',
+        'id_trunk_group2',
+        'id_trunk_group3',
         'idTrunktrunkcode',
         'connectcharge',
         'disconnectcharge',
@@ -65,6 +67,8 @@ class RateController extends Controller
     public $fieldsInvisibleAgent = array(
         'additional_grace',
         'id_trunk_group',
+        'id_trunk_group2',
+        'id_trunk_group3',
         'idTrunktrunkcode',
         'connectcharge',
         'disconnectcharge',
@@ -99,7 +103,6 @@ class RateController extends Controller
             );
         }
     }
-
     public function extraFilterCustomClient($filter)
     {
         //se for cliente filtrar pelo plano do cliente
@@ -261,7 +264,7 @@ class RateController extends Controller
             " CHARACTER SET UTF8 " .
             " FIELDS TERMINATED BY '" . $values['delimiter'] . "'" .
             " LINES TERMINATED BY '\\r\\n' (dialprefix,destination,rateinitial,initblock,billingblock,minimal_time_charge,connectcharge,disconnectcharge,package_offer)" .
-            " SET id_plan = " . $values['id_plan'] . ", id_trunk_group = " . $values['id_trunk_group'] . ", id_prefix = " . $modelPrefix->id . "";
+            " SET id_plan = " . $values['id_plan'] . ", id_trunk_group = " . $values['id_trunk_group'] . ", id_trunk_group2 = " . $values['id_trunk_group2'] . ", id_trunk_group3 = " . $values['id_trunk_group3'] . ", id_prefix = " . $modelPrefix->id . "";
 
             try {
                 Yii::app()->db->createCommand($sql)->execute();

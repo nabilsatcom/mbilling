@@ -58,6 +58,11 @@ Ext.define('MBilling.view.restrictedPhonenumber.List', {
                 ]
             },
             flex: 1
+        }, {
+            header: t('Date'),
+            renderer: Ext.util.Format.dateRenderer('Y-m-d H:i:s'),
+            dataIndex: 'starttime',
+            flex: 4
         }]
         me.callParent(arguments);
     }

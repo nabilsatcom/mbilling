@@ -13,7 +13,7 @@
  * MagnusSolution.com <info@magnussolution.com>
  * 08/11/2012
  */
-Ext.define('MBilling.view.sip.Bulk', {
+ Ext.define('MBilling.view.sip.Bulk', {
     extend: 'Ext.window.Window',
     alias: 'widget.sipbulk',
     autoShow: true,

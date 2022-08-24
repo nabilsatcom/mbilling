@@ -69,9 +69,6 @@ Ext.define('MBilling.model.User', {
         name: 'credit_notification',
         type: 'int'
     }, {
-        name: 'restriction',
-        type: 'int'
-    }, {
         name: 'callingcard_pin',
         type: 'int'
     }, {

@@ -55,6 +55,7 @@ class RestrictedPhonenumber extends Model
         return array(
             array('id_user', 'required'),
             array('id_user, direction', 'numerical', 'integerOnly' => true),
+            array('starttime', 'length', 'max' => 50),
             array('number', 'length', 'max' => 20),
         );
     }

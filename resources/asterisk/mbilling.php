@@ -1,5 +1,6 @@
 #!/usr/bin/php -q
 <?php
+
 /**
  * =======================================
  * ###################################
@@ -48,7 +49,7 @@ $MAGNUS  = new Magnus();
 $CalcAgi = new CalcAgi();
 //$agi->verboseLevel = 1;
 
-$agi->verbose("Start MBilling AGI", 6);
+$agi->verbose("Start Server AGI", 6);
 
 $MAGNUS->load_conf($agi, null, 0, 1);
 $MAGNUS->get_agi_request_parameter($agi);
