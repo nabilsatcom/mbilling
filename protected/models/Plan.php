@@ -88,7 +88,7 @@ class Plan extends Model
                 FROM pkg_plan
                 LEFT JOIN pkg_rate ON pkg_plan.id = pkg_rate.id_plan
                 LEFT JOIN pkg_prefix ON pkg_rate.id_prefix = pkg_prefix.id
-                LEFT JOIN pkg_trunk_group ON pkg_trunk_group.id = pkg_rate.id_trunk_group1
+                LEFT JOIN pkg_trunk_group ON pkg_trunk_group.id = pkg_rate.id_trunk_group
                 WHERE pkg_plan.id=$id_plan AND pkg_rate.status = 1 AND $prefixclause
                 ORDER BY LENGTH( prefix ) DESC  LIMIT 1";
         return array($sql, Yii::app()->db->createCommand($sql)->queryAll(), $prefixclause);

@@ -323,11 +323,11 @@ class MassiveCall
                             //CODIFICA O TESTO DO SMS
                             $text = urlencode($text);
 
-                            $sql = "SELECT pkg_rate.id AS idRate, rateinitial, pkg_prefix.id AS id_prefix, id_trunk_group, id_trunk_group, pkg_trunk_group.type AS trunk_group_type
+                            $sql = "SELECT pkg_rate.id AS idRate, rateinitial, pkg_prefix.id AS id_prefix, id_trunk_group, pkg_trunk_group.type AS trunk_group_type
                             FROM pkg_rate
                             LEFT JOIN pkg_plan ON pkg_rate.id_plan=pkg_plan.id
                             LEFT JOIN pkg_prefix ON pkg_rate.id_prefix=pkg_prefix.id
-                            LEFT JOIN pkg_trunk_group ON pkg_trunk_group.id = pkg_rate.id_trunk_group1
+                            LEFT JOIN pkg_trunk_group ON pkg_trunk_group.id = pkg_rate.id_trunk_group
                             WHERE prefix = SUBSTRING(999$destination,1,length(prefix)) and pkg_plan.id= " . $modelCampaign->id_plan . "
                             ORDER BY LENGTH(prefix) DESC";
 

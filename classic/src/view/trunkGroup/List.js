@@ -41,48 +41,45 @@ Ext.define('MBilling.view.trunkGroup.List', {
             renderer: function(value) {
                 switch (value) {
                     case 1:
-                        value = t('Order By Time & delay 10 Sec');
+                        value = t('Orden by Time & delay 10 Sec');
                         break;
                     case 2:
-                        value = t('Order By Time & delay 30 Sec');
+                        value = t('Orden by Time & delay 30 Sec');
                         break;
                     case 3:
-                        value = t('Order By Time & delay 1 MIN');
+                        value = t('Orden by Time & delay 1 Min');
                         break;
                     case 4:
-                        value = t('Order By Time & delay 2 MIN');
+                        value = t('Orden by Time & delay 2 Min');
                         break;
                     case 5:
-                        value = t('Order By Time & delay 3 MIN');
+                        value = t('Orden by Time & delay 3 Min');
                         break;
                     case 6:
-                        value = t('Order By Time & delay 5 MIN');
+                        value = t('Orden by Time & delay 5 Min');
                         break;
                     case 7:
-                        value = t('Order By Time & delay 10 MIN');
+                        value = t('Orden by Time & delay 10 Min');
                         break;
                     case 8:
-                        value = t('Order By Time & delay 15 MIN');
+                        value = t('Orden by Time & delay 15 Min');
                         break;
                     case 9:
-                        value = t('Order By Time & delay 20 MIN');
+                        value = t('Orden by Time & delay 30 Min');
                         break;
                     case 10:
-                        value = t('Order By Time & delay 30 MIN');
+                        value = t('Orden by Time & delay 1 Hour');
                         break;
                     case 11:
-                        value = t('Order By Time & delay 1 Hour');
+                        value = t('Orden by Time & delay 2 Hour');
                         break;
                     case 12:
-                        value = t('Order By Time & delay 2 Hour');
+                        value = t('Orden by Time & delay 4 Hour');
                         break;
                     case 13:
-                        value = t('Order By Time & delay 4 Hour');
-                        break;
-                    case 14:
                         value = t('Random');
                         break;
-                    case 15:
+                    case 14:
                         value = t('LCR');
                         break;
                     }
@@ -92,22 +89,21 @@ Ext.define('MBilling.view.trunkGroup.List', {
             filter: {
                 type: 'list',
                 options: [
-                    [1, t('Order By Time & delay 10 Sec')],
-                    [2, t('Order By Time & delay 30 Sec')],
-                    [3, t('Order By Time & delay 1 Min')],
-                    [4, t('Order By Time & delay 2 Min')],
-                    [5, t('Order By Time & delay 3 Min')],
-                    [6, t('Order By Time & delay 5 Min')],
-                    [7, t('Order By Time & delay 10 Min')],
-                    [8, t('Order By Time & delay 15 Min')],
-                    [9, t('Order By Time & delay 20 Min')],
-                    [10, t('Order By Time & delay 30 Min')],
-                    [11, t('Order By Time & delay 1 Hour')],
-                    [12, t('Order By Time & delay 2 Hour')],
-                    [13, t('Order By Time & delay 4 Hour')],
-                    [14, t('Random')],
-                    [15, t('LCR')]
-                        ]
+                    [1, t('Orden by Time & delay 10 Sec')],
+                    [2, t('Orden by Time & delay 30 sec')],
+                    [3, t('Orden by Time & delay 1 min')],
+                    [4, t('Orden by Time & delay 2 min')],
+                    [5, t('Orden by Time & delay 3 min')],
+                    [6, t('Orden by Time & delay 5 min')],
+                    [7, t('Orden by Time & delay 10 min')],
+                    [8, t('Orden by Time & delay 15 min')],
+                    [10, t('Orden by Time & delay 30 min')],
+                    [11, t('Orden by Time & delay 1 Hour')],
+                    [11, t('Orden by Time & delay 2 Hour')],
+                    [12, t('Orden by Time & delay 4 Hour')],
+                    [13, t('Random')],
+                    [14, t('LCR')]
+                    ]
             }
 
         }, {

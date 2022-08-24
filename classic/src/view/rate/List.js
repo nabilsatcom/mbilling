@@ -57,25 +57,7 @@ Ext.define('MBilling.view.rate.List', {
                 xtype: 'templatecolumn',
                 tpl: '{idTrunkGroupname}',
                 header: t('Trunk groups 1'),
-                dataIndex: 'id_trunk_group1',
-                comboFilter: 'trunkgroupcombo',
-                flex: 3,
-                hidden: !App.user.isAdmin || window.isTablet,
-                hideable: App.user.isAdmin
-            }, {
-                xtype: 'templatecolumn',
-                tpl: '{idTrunkGroup2name}',
-                header: t('Trunk groups 2'),
-                dataIndex: 'id_trunk_group2',
-                comboFilter: 'trunkgroupcombo',
-                flex: 3,
-                hidden: !App.user.isAdmin || window.isTablet,
-                hideable: App.user.isAdmin
-            }, {
-                xtype: 'templatecolumn',
-                tpl: '{idTrunkGroup3name}',
-                header: t('Trunk groups 3'),
-                dataIndex: 'id_trunk_group3',
+                dataIndex: 'id_trunk_group',
                 comboFilter: 'trunkgroupcombo',
                 flex: 3,
                 hidden: !App.user.isAdmin || window.isTablet,

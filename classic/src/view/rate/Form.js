@@ -82,55 +82,13 @@
                     items: [{
                         xtype: 'trunkgrouplookup',
                         ownerForm: me,
-                        name: 'id_trunk_group1',
+                        name: 'id_trunk_group',
                         fieldLabel: t('Trunk groups 1'),
                         flex: 4
                     }, {
                         xtype: 'booleancombo',
                         fieldLabel: t('WL1'),
                         name: 'WL1',
-                        labelWidth: 20
-                    }]
-                }, {
-                    xtype: 'fieldcontainer',
-                    layout: 'hbox',
-                    defaults: {
-                        xtype: 'textfield',
-                        labelAlign: 'right',
-                        allowBlank: false,
-                        flex: 1
-                    },
-                    items: [{
-                        xtype: 'trunkgroup2lookup',
-                        ownerForm: me,
-                        name: 'id_trunk_group2',
-                        fieldLabel: t('Trunk groups 2'),
-                        flex: 4
-                    }, {
-                        xtype: 'booleancombo',
-                        fieldLabel: t('WL2'),
-                        name: 'WL2',
-                        labelWidth: 20
-                    }]
-                }, {
-                    xtype: 'fieldcontainer',
-                    layout: 'hbox',
-                    defaults: {
-                        xtype: 'textfield',
-                        labelAlign: 'right',
-                        allowBlank: false,
-                        flex: 1
-                    },
-                    items: [{
-                        xtype: 'trunkgroup3lookup',
-                        ownerForm: me,
-                        name: 'id_trunk_group3',
-                        fieldLabel: t('Trunk groups 3'),
-                        flex: 4
-                    }, {
-                        xtype: 'booleancombo',
-                        fieldLabel: t('WL3'),
-                        name: 'WL3',
                         labelWidth: 20
                     }]
                 }, {

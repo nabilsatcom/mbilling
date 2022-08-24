@@ -18,13 +18,7 @@ Ext.define('MBilling.model.Rate', {
         name: 'id_trunk_history',
         type: 'int'
     }, {
-        name: 'id_trunk_group1',
-        type: 'int'
-    }, {
-        name: 'id_trunk_group2',
-        type: 'int'
-    }, {
-        name: 'id_trunk_group3',
+        name: 'id_trunk_group',
         type: 'int'
     }, {
         name: 'FNCalled',
@@ -107,7 +101,7 @@ Ext.define('MBilling.model.Rate', {
     }, {
         name: 'status',
         type: 'int'
-    }, 'idPrefixdestination', 'idPrefixprefix', 'idTrunkGroupname', 'idTrunkGroup2name', 'idTrunkGroup3name', 'idPlanname'],
+    }, 'idPrefixdestination', 'idPrefixprefix', 'idTrunkGroupname', 'idPlanname'],
     proxy: {
         type: 'uxproxy',
         module: 'rate'
