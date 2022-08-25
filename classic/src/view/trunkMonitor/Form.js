@@ -29,6 +29,20 @@ Ext.define('MBilling.view.trunkMonitor.Form', {
             fieldLabel: t('Date'),
             format: 'Y-m-d H:i:s',
             value: new Date()
+        }, {
+            xtype: 'numberfield',
+            name: 'OK',
+            fieldLabel: t('Conexted'),
+            value: '0',
+            minValue: 0,
+            flex: 4
+        }, {
+            xtype: 'numberfield',
+            name: 'MOK',
+            fieldLabel: t('Failed'),
+            value: '0',
+            minValue: 0,
+            flex: 4
         }];
         me.callParent(arguments);
     }

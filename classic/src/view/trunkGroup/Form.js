@@ -52,6 +52,20 @@ Ext.define('MBilling.view.trunkGroup.Form', {
                 [14, t('LCR')]
             ]
         }, {
+            xtype: 'numberfield',
+            name: 'limit_ok',
+            fieldLabel: t('Limit Conexted'),
+            value: '0',
+            minValue: 0,
+            flex: 3
+        }, {
+            xtype: 'numberfield',
+            name: 'limit_nok',
+            fieldLabel: t('Limit Failed'),
+            value: '0',
+            minValue: 0,
+            flex: 3
+        }, {
             xtype: 'fieldset',
             style: 'margin-top:10px; overflow: visible;',
             title: t('Select one or more trunks'),

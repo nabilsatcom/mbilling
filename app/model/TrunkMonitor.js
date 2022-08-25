@@ -19,6 +19,12 @@ Ext.define('MBilling.model.TrunkMonitor', {
         name: 'starttime',
         type: 'date',
         dateFormat: 'Y-m-d H:i:s'
+    }, {
+        name: 'OK',
+        type: 'int'
+    }, {
+        name: 'NOK',
+        type: 'int'
     }],
     proxy: {
         type: 'uxproxy',

@@ -30,6 +30,12 @@ Ext.define('MBilling.model.TrunkGroup', {
         name: 'type',
         type: 'int'
     }, {
+        name: 'limit_ok',
+        type: 'int'
+    }, {
+        name: 'limit_nok',
+        type: 'int'
+    }, {
         name: 'description',
         type: 'string'
     }, 'subRecords', 'id_trunk'],

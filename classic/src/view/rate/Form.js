@@ -61,14 +61,14 @@
                         ownerForm: me,
                         name: 'id_trunk_history',
                         fieldLabel: t('Trunk History'),
-                        flex: 4
+                        flex: 3
                     }, {
                         xtype: 'numberfield',
                         name: 'History_Number',
                         fieldLabel: t('H'),
                         value: '1',
                         minValue: 1,
-                        labelWidth: 20
+                        flex: 1
                     }]
                 }, {
                     xtype: 'fieldcontainer',
@@ -84,12 +84,12 @@
                         ownerForm: me,
                         name: 'id_trunk_group',
                         fieldLabel: t('Trunk groups 1'),
-                        flex: 4
+                        flex: 3
                     }, {
                         xtype: 'booleancombo',
                         fieldLabel: t('WL1'),
                         name: 'WL1',
-                        labelWidth: 20
+                        flex: 1
                     }]
                 }, {
                     xtype: 'moneyfield',
@@ -194,7 +194,7 @@
                         xtype: 'numberfield',
                         name: 'att2min',
                         fieldLabel: t('Att'),
-                        value: '0',
+                        value: '1',
                         minValue: 0,
                         labelWidth: 20
                     }]
@@ -216,7 +216,7 @@
                         xtype: 'numberfield',
                         name: 'att5min',
                         fieldLabel: t('Att'),
-                        value: '0',
+                        value: '2',
                         minValue: 0,
                         labelWidth: 20
                     }]
@@ -239,7 +239,7 @@
                         xtype: 'numberfield',
                         name: 'att15min',
                         fieldLabel: t('Att'),
-                        value: '0',
+                        value: '3',
                         minValue: 0,
                         labelWidth: 20
                     }]
@@ -262,7 +262,7 @@
                         xtype: 'numberfield',
                         name: 'att1h',
                         fieldLabel: t('Att'),
-                        value: '0',
+                        value: '5',
                         minValue: 0,
                         labelWidth: 20
                     }]
@@ -285,7 +285,7 @@
                         xtype: 'numberfield',
                         name: 'att4h',
                         fieldLabel: t('Att'),
-                        value: '0',
+                        value: '10',
                         minValue: 0,
                         labelWidth: 20
                     }]
@@ -308,7 +308,7 @@
                         xtype: 'numberfield',
                         name: 'att1d',
                         fieldLabel: t('Att'),
-                        value: '0',
+                        value: '20',
                         minValue: 0,
                         labelWidth: 20
                     }]

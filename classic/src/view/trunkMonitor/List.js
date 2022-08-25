@@ -67,7 +67,15 @@
             dataIndex: 'starttime',
             flex: 4,
             hideable: App.user.isAdmin
-        }];
+    }, {
+            header: t('Conected'),
+            dataIndex: 'OK',
+            flex: 2
+    }, {
+            header: t('Failed'),
+            dataIndex: 'NOK',
+            flex: 2
+            }];
         me.callParent(arguments);
     }
 });

@@ -105,12 +105,14 @@ Ext.define('MBilling.view.trunkGroup.List', {
                     [14, t('LCR')]
                     ]
             }
-
         }, {
-            header: t('Description'),
-            dataIndex: 'description',
-            flex: 5,
-            hidden: window.isTablet
+            header: t('Limit Conected'),
+            dataIndex: 'limit_ok',
+            flex: 2
+        }, {
+            header: t('Limit Failed'),
+            dataIndex: 'limit_nok',
+            flex: 2
         }]
         me.callParent(arguments);
     }

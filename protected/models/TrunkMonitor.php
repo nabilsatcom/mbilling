@@ -45,7 +45,7 @@ class TrunkMonitor extends Model
         return array(
             array('id_trunk_group, id_trunk ', 'required'),
             array('id_trunk_group, id_trunk', 'numerical', 'integerOnly' => true),
-            array('starttime', 'length', 'max' => 50),
+            array('starttime, OK, NOK', 'length', 'max' => 50),
 
 
 

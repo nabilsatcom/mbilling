@@ -56,7 +56,7 @@ class TrunkGroup extends Model
         return array(
             array('name', 'required'),
             array('type', 'numerical', 'integerOnly' => true),
-            array('description', 'length', 'max' => 500),
+            array('description, limit_ok, limit_nok', 'length', 'max' => 500),
         );
     }
 
