@@ -4,7 +4,7 @@
  *
  * =======================================
  * ###################################
- * MagnusBilling
+ *
  *
  * @package    MagnusBilling
  * @author    Adilson Leffa Magnus.

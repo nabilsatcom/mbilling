@@ -59,13 +59,14 @@ Ext.define('MBilling.view.dashboard.Module', {
             height = (Ext.Element.getViewportHeight() - 130) / 2;
             if (App.user.isAdmin) {
                 me.items = [{
-                    xtype: 'network',
-                    // 60% width when viewport is big enough,
-                    // 100% when viewport is small
+                    xtype: 'callonlinelist2',
+                    cls: 'dashboard-main-chart shadow',
                     height: height,
+                    showDownload: false,
+                    hiddenButtonsCharts: true,
                     userCls: 'big-60 small-100'
                 }, {
-                    xtype: 'callonlinelist2',
+                    xtype: 'trunkmonitorlist2',
                     cls: 'dashboard-main-chart shadow',
                     height: height,
                     showDownload: false,
@@ -79,11 +80,10 @@ Ext.define('MBilling.view.dashboard.Module', {
                     hiddenButtonsCharts: true,
                     userCls: 'big-60 small-100'
                 }, {
-                    xtype: 'trunkmonitorlist2',
-                    cls: 'dashboard-main-chart shadow',
+                    xtype: 'network',
+                    // 60% width when viewport is big enough,
+                    // 100% when viewport is small
                     height: height,
-                    showDownload: false,
-                    hiddenButtonsCharts: true,
                     userCls: 'big-40 small-100'
                 }]
             } else {

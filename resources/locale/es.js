@@ -3,9 +3,8 @@
  * Adilson Leffa Magnus
  * =======================================
  * ###################################
- * MagnusBilling
  *
- * @package MagnusBilling
+ *
  * @author  Adilson Leffa Magnus.
  * @copyright   Todos os direitos reservados.
  * ###################################

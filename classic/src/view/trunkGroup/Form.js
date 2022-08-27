@@ -3,9 +3,8 @@
  *
  * =======================================
  * ###################################
- * MagnusBilling
  *
- * @package MagnusBilling
+ *
  * @author Adilson Leffa Magnus.
  * @copyright Copyright (C) 2005 - 2021 MagnusBilling. All rights reserved.
  * ###################################
@@ -54,7 +53,7 @@ Ext.define('MBilling.view.trunkGroup.Form', {
         }, {
             xtype: 'numberfield',
             name: 'limit_ok',
-            fieldLabel: t('Limit Conexted'),
+            fieldLabel: t('Limit 200'),
             value: '0',
             minValue: 0,
             flex: 3

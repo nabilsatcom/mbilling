@@ -2,9 +2,8 @@
 /**
  * =======================================
  * ###################################
- * MagnusBilling
  *
- * @package MagnusBilling
+ *
  * @author Heitor Gianastasio Pipet de Oliveira.
  * @copyright Copyright (C) 2005 - 2021 MagnusSolution. All rights reserved.
  * ###################################

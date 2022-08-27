@@ -3,9 +3,8 @@
  *
  * =======================================
  * ###################################
- * MagnusBilling
  *
- * @package MagnusBilling
+ *
  * @author Adilson Leffa Magnus.
  * @copyright Copyright (C) 2005 - 2021 MagnusBilling. All rights reserved.
  * ###################################
@@ -54,10 +53,17 @@ Ext.define('MBilling.view.callSummaryDayTrunk.List', {
             dataIndex: 'sessiontime',
             flex: 2
         }, {
-            header: t('ALOC all calls'),
+            header: t('ACD'),
             dataIndex: 'aloc_all_calls',
             renderer: Helper.Util.formatsecondsToTime,
             flex: 3
+        }, {
+            header: t('ASR'),
+            dataIndex: 'asr',
+            renderer: Helper.Util.formatPorcente,
+            flex: 3,
+            hidden: App.user.isClient,
+            hideable: App.user.isAdmin
         }, {
             header: t('Answered'),
             dataIndex: 'nbcall',
@@ -71,8 +77,8 @@ Ext.define('MBilling.view.callSummaryDayTrunk.List', {
             dataIndex: 'buycost',
             renderer: Helper.Util.formatMoneyDecimal,
             flex: 3,
-            hidden: App.user.isClient || App.user.hidden_prices == 1,
-            hideable: App.user.isAdmin && App.user.hidden_prices == 0
+            hidden: true,
+            hideable: App.user.isAdmin
         }, {
             header: t('Sell price'),
             dataIndex: 'sessionbill',
@@ -85,14 +91,7 @@ Ext.define('MBilling.view.callSummaryDayTrunk.List', {
             dataIndex: 'lucro',
             renderer: Helper.Util.formatMoneyDecimal,
             flex: 3,
-            hidden: App.user.isClient || App.user.hidden_prices == 1,
-            hideable: App.user.isAdmin && App.user.hidden_prices == 0
-        }, {
-            header: t('ASR'),
-            dataIndex: 'asr',
-            renderer: Helper.Util.formatPorcente,
-            flex: 3,
-            hidden: App.user.isClient,
+            hidden: true,
             hideable: App.user.isAdmin
         }];
         me.callParent(arguments);

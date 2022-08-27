@@ -3,9 +3,8 @@
  * Modelo para a tabela "Call".
  * =======================================
  * ###################################
- * MagnusBilling
  *
- * @package MagnusBilling
+ *
  * @author Adilson Leffa Magnus.
  * @copyright Todos os direitos reservados.
  * ###################################

@@ -2,9 +2,8 @@
 /**
  * =======================================
  * ###################################
- * MagnusBilling
  *
- * @package MagnusBilling
+ *
  * @author Adilson Leffa Magnus.
  * @copyright Copyright (C) 2005 - 2018 MagnusSolution. All rights reserved.
  * ###################################

@@ -6,9 +6,8 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
  *
  * =======================================
  * ###################################
- * MagnusBilling
  *
- * @package MagnusBilling
+ *
  * @author Adilson Leffa Magnus.
  * @copyright Copyright (C) 2005 - 2021 MagnusSolution. All rights reserved.
  * ###################################

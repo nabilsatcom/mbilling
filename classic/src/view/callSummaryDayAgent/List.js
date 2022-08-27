@@ -3,9 +3,8 @@
  *
  * =======================================
  * ###################################
- * MagnusBilling
  *
- * @package MagnusBilling
+ *
  * @author Adilson Leffa Magnus.
  * @copyright Copyright (C) 2005 - 2021 MagnusBilling. All rights reserved.
  * ###################################
@@ -55,9 +54,16 @@ Ext.define('MBilling.view.callSummaryDayAgent.List', {
             dataIndex: 'sessiontime',
             flex: 2
         }, {
-            header: t('ALOC all calls'),
+            header: t('ACD'),
             dataIndex: 'aloc_all_calls',
             flex: 3
+        }, {
+            header: t('ASR'),
+            dataIndex: 'asr',
+            renderer: Helper.Util.formatPorcente,
+            flex: 3,
+            hidden: App.user.isClient,
+            hideable: App.user.isAdmin
         }, {
             header: t('Answered'),
             dataIndex: 'nbcall',
@@ -71,8 +77,8 @@ Ext.define('MBilling.view.callSummaryDayAgent.List', {
             dataIndex: App.user.isAdmin ? 'buycost' : 'sessionbill',
             renderer: Helper.Util.formatMoneyDecimal,
             flex: 3,
-            hidden: App.user.isClient || App.user.hidden_prices == 1,
-            hideable: App.user.isAdmin && App.user.hidden_prices == 0
+            hidden: true,
+            hideable: App.user.isAdmin
         }, {
             header: t('Sell price'),
             dataIndex: App.user.isAdmin ? 'sessionbill' : 'agent_bill',
@@ -84,14 +90,7 @@ Ext.define('MBilling.view.callSummaryDayAgent.List', {
             dataIndex: App.user.isAdmin ? 'lucro' : 'agent_lucro',
             renderer: Helper.Util.formatMoneyDecimal,
             flex: 3,
-            hidden: App.user.isClient || App.user.hidden_prices == 1,
-            hideable: App.user.isAdmin && App.user.hidden_prices == 0
-        }, {
-            header: t('ASR'),
-            dataIndex: 'asr',
-            renderer: Helper.Util.formatPorcente,
-            flex: 3,
-            hidden: App.user.isClient,
+            hidden: true,
             hideable: App.user.isAdmin
         }];
         me.callParent(arguments);

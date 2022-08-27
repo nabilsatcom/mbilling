@@ -3,9 +3,8 @@
  *
  * =======================================
  * ###################################
- * MagnusBilling
  *
- * @package MagnusBilling
+ *
  * @author Adilson Leffa Magnus.
  * @copyright Copyright (C) 2005 - 2021 MagnusBilling. All rights reserved.
  * ###################################
@@ -45,7 +44,7 @@ Ext.define('MBilling.view.callSummaryMonthDid.List', {
             dataIndex: 'sessiontime',
             flex: 2
         }, {
-            header: t('ALOC all calls'),
+            header: t('ACD'),
             dataIndex: 'aloc_all_calls',
             renderer: Helper.Util.formatsecondsToTime,
             flex: 3
