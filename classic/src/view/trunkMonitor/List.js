@@ -68,7 +68,7 @@
             flex: 4,
             hideable: App.user.isAdmin
     }, {
-            header: t('Conected'),
+            header: t('200'),
             dataIndex: 'OK',
             flex: 2
     }, {
@@ -105,7 +105,7 @@ Ext.define('MBilling.view.trunkMonitor.List2', {
             header: t('Trunk'),
             dataIndex: 'id_trunk',
             comboFilter: 'trunkcombo',
-            flex: 3,
+            flex: 2,
             hideable: App.user.isAdmin
         }, {
             xtype: 'templatecolumn',
@@ -122,13 +122,13 @@ Ext.define('MBilling.view.trunkMonitor.List2', {
             flex: 4,
             hideable: App.user.isAdmin
         }, {
-            header: t('Count'),
-            dataIndex: 'count',
+            header: t('200'),
+            dataIndex: 'OK',
             hideable: !App.user.isClient && !App.user.isAgent,
             flex: 1
         }, {
-            header: t('ACD'),
-            dataIndex: 'acd',
+            header: t('Failed'),
+            dataIndex: 'NOK',
             hideable: !App.user.isClient && !App.user.isAgent,
             flex: 1
         }];

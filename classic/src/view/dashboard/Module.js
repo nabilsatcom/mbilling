@@ -65,50 +65,25 @@ Ext.define('MBilling.view.dashboard.Module', {
                     height: height,
                     userCls: 'big-60 small-100'
                 }, {
-                    xtype: 'component',
-                    bodyPadding: 5,
-                    baseCls: 'weather-panel',
-                    border: false,
-                    height: (height - 60) / 4,
-                    reference: 'totalusersdiv',
-                    cls: 'weather-panel shadow',
+                    xtype: 'callonlinelist2',
+                    cls: 'dashboard-main-chart shadow',
+                    height: height,
+                    showDownload: false,
+                    hiddenButtonsCharts: true,
                     userCls: 'big-40 small-100'
-                }, {
-                    xtype: 'component',
-                    baseCls: 'weather-panel',
-                    border: false,
-                    height: (height - 60) / 4,
-                    reference: 'maximumcc',
-                    cls: 'weather-panel shadow',
-                    userCls: 'big-40 small-100'
-                }, {
-                    xtype: 'component',
-                    baseCls: 'weather-panel',
-                    border: false,
-                    height: (height - 60) / 4,
-                    reference: 'monthprofitdiv',
-                    cls: 'weather-panel shadow',
-                    userCls: 'big-40 small-100',
-                    hidden: App.user.hidden_prices == 1
-                }, {
-                    xtype: 'component',
-                    baseCls: 'weather-panel',
-                    border: false,
-                    height: (height - 60) / 4,
-                    reference: 'totalrefill',
-                    cls: 'weather-panel shadow',
-                    userCls: 'big-40 small-100',
-                    hidden: App.user.hidden_prices == 1
                 }, {
                     xtype: 'callonlinechartchart',
-                    title: t('Simultaneous calls'),
                     cls: 'dashboard-main-chart shadow',
                     height: height,
                     showDownload: false,
                     hiddenButtonsCharts: true,
                     userCls: 'big-60 small-100'
                 }, {
-                    xtype: 'trunks',
+                    xtype: 'trunkmonitorlist2',
+                    cls: 'dashboard-main-chart shadow',
+                    height: height,
+                    showDownload: false,
+                    hiddenButtonsCharts: true,
                     userCls: 'big-40 small-100'
                 }]
             } else {

@@ -32,13 +32,13 @@ Ext.define('MBilling.view.trunkMonitor.Form', {
         }, {
             xtype: 'numberfield',
             name: 'OK',
-            fieldLabel: t('Conexted'),
+            fieldLabel: t('200'),
             value: '0',
             minValue: 0,
             flex: 4
         }, {
             xtype: 'numberfield',
-            name: 'MOK',
+            name: 'NOK',
             fieldLabel: t('Failed'),
             value: '0',
             minValue: 0,

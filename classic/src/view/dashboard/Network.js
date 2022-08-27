@@ -30,7 +30,6 @@ Ext.define('MBilling.view.dashboard.Network', {
     },
     initComponent: function() {
         var me = this;
-        me.title = t('Server hardware');
         me.items = [{
             flex: 1,
             layout: 'fit',
