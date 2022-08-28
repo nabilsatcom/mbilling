@@ -4,6 +4,7 @@
  * ###################################
  *
  * 
+ * 
  */
  Ext.define('MBilling.view.trunkMonitor.List', {
     extend: 'Ext.ux.grid.Panel',
@@ -46,6 +47,10 @@
             hidden: true,
             hideable: App.user.isAdmin
     }, {
+            header: t('Status'),
+            dataIndex: 'status',
+            flex: 2
+    }, {
             xtype: 'templatecolumn',
             tpl: '{idTrunktrunkcode}',
             header: t('Trunk'),
@@ -53,6 +58,10 @@
             comboFilter: 'trunkcombo',
             flex: 3,
             hideable: App.user.isAdmin
+    }, {
+            header: t('ICCID'),
+            dataIndex: 'iccid',
+            flex: 3
     }, {
             xtype: 'templatecolumn',
             tpl: '{idTrunkGroupname}',
@@ -65,7 +74,7 @@
             header: t('Date'),
             renderer: Ext.util.Format.dateRenderer('Y-m-d H:i:s'),
             dataIndex: 'starttime',
-            flex: 4,
+            flex: 3,
             hideable: App.user.isAdmin
     }, {
             header: t('200'),
@@ -75,7 +84,7 @@
             header: t('Failed'),
             dataIndex: 'NOK',
             flex: 2
-            }];
+    }];
         me.callParent(arguments);
     }
 });
@@ -100,6 +109,11 @@ Ext.define('MBilling.view.trunkMonitor.List2', {
             hidden: true,
             hideable: App.user.isAdmin
         }, {
+            header: t('Status'),
+            dataIndex: 'status',
+            hideable: !App.user.isClient && !App.user.isAgent,
+            flex: 1
+        }, {
             xtype: 'templatecolumn',
             tpl: '{idTrunktrunkcode}',
             header: t('Trunk'),
@@ -119,7 +133,7 @@ Ext.define('MBilling.view.trunkMonitor.List2', {
             header: t('Date'),
             renderer: Ext.util.Format.dateRenderer('Y-m-d H:i:s'),
             dataIndex: 'starttime',
-            flex: 4,
+            flex: 3,
             hideable: App.user.isAdmin
         }, {
             header: t('200'),

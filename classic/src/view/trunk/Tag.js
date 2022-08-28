@@ -2,6 +2,7 @@
  * Class to define tag of "trunk"
  *
  * 
+ * 
  */
 Ext.define('MBilling.view.trunk.Tag', {
     extend: 'Ext.form.field.Tag',

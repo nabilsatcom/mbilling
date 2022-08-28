@@ -2,6 +2,7 @@
  * Class to define lookup of "user"
  *
  * 
+ * 
  */
 Ext.define('MBilling.view.trunk.Lookup', {
     extend: 'Ext.ux.form.field.Lookup',

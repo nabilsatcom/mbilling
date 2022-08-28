@@ -25,6 +25,12 @@ Ext.define('MBilling.model.TrunkMonitor', {
     }, {
         name: 'NOK',
         type: 'int'
+    }, {
+        name: 'iccid',
+        type: 'string'
+    }, {
+        name: 'status',
+        type: 'string'
     }],
     proxy: {
         type: 'uxproxy',

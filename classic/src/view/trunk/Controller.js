@@ -1,10 +1,11 @@
 /**
- * Classe que define a lista de "CallShopCdr"
+ * Classe que define a lista de "Trunk"
  *
  * =======================================
  * ###################################
  * 
  *
+ * 
  */
 Ext.define('MBilling.view.trunk.Controller', {
     extend: 'Ext.ux.app.ViewController',

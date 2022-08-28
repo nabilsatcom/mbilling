@@ -1,8 +1,9 @@
 /**
- * Classe que define a combo de "trunkcombo"
+ * Classe que define a combo de "Trunk"
  *
  * =======================================
  * ###################################
+ * 
  * 
  *
  */
