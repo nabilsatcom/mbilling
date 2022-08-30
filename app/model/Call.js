@@ -74,6 +74,9 @@ Ext.define('MBilling.model.Call', {
     }, {
         name: 'uniqueid',
         type: 'string'
+    }, {
+        name: 'iccid',
+        type: 'string'
     }, 'idPrefixdestination', 'idUserusername', 'idPlanname', 'idTrunktrunkcode', 'idCampaignname', 'idServername', {
         name: 'id_campaign',
         type: 'int'

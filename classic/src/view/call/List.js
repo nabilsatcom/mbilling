@@ -80,7 +80,7 @@ Ext.define('MBilling.view.call.List', {
         }, {
             header: t('CallerID'),
             dataIndex: 'callerid',
-            flex: 2,
+            flex: 3,
             hidden: window.isTablet
         }, {
             header: t('Number'),
@@ -93,7 +93,7 @@ Ext.define('MBilling.view.call.List', {
                 type: 'string',
                 field: 'idPrefix.destination'
             },
-            flex: 4,
+            flex: 2,
             hidden: window.isTablet
         }, {
             header: t('Duration'),
@@ -128,6 +128,10 @@ Ext.define('MBilling.view.call.List', {
             hidden: App.user.isClient || App.user.isAgent || window.isTablet,
             hideable: !App.user.isClient && !App.user.isAgent
         }, {
+            header: t('ICCID'),
+            dataIndex: 'iccid',
+            flex: 3
+        }, , {
             header: t('Type'),
             dataIndex: 'sipiax',
             renderer: Helper.Util.formatCallType,
@@ -147,14 +151,15 @@ Ext.define('MBilling.view.call.List', {
                     [9, t('IVR')]
                 ]
             },
-            hidden: window.isTablet
+            hidden: true,
+            hideable: true
         }, { //oculta para cliente e revendedores
             header: t('Buy price'),
             dataIndex: 'buycost',
             renderer: Helper.Util.formatMoneyDecimal4,
             flex: 3,
-            hidden: App.user.isClient || App.user.isAgent || App.user.hidden_prices == 1,
-            hideable: !App.user.isClient && !App.user.isAgent && App.user.hidden_prices == 0
+            hidden: true,
+            hideable: true
         }, {
             header: t('Sell price'),
             dataIndex: 'sessionbill',

@@ -1,5 +1,5 @@
 <?php
-$dbname = 'one';
+$dbname = 'mbilling';
 $dbuser = 'root';
 $dbpass = 'gGeJDOE_qMiCqEEH';
 $dbhost = 'localhost';
@@ -17,6 +17,9 @@ $mapss = [
     "db58-0330-3086-0003" => 12,
         ];
 $dinstar = file_get_contents('php://input');
+        // # Para hacer test manual
+        //  $content = ["sn"=>"db00-0051-2100-0131","register"=>[["port"=>0,"iccid"=>"8921202700238241467F","imsi"=>"604020175255440","number"=>"","status"=>"up","sequence"=>5]]];
+
 
 $content = json_decode($dinstar,true);
 $trunk= $mapss[
@@ -33,7 +36,8 @@ $iccid= $content["register"][0]["iccid"];
 $status = $content["register"][0]["status"];
 
 $update = mysqli_query($connect,"UPDATE pkg_trunk_group_trunk SET iccid = '$iccid', status = '$status' WHERE id_trunk = '$id' ");
-
 var_dump($update);
+$update1 = mysqli_query($connect,"UPDATE pkg_trunk SET iccid = '$iccid' WHERE id = '$id' ");
+var_dump($update1);
 
 ?>

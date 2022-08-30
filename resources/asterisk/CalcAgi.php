@@ -824,9 +824,9 @@ class CalcAgi
         // #####################################
 
         if ($this->tariffObj[0]['id_trunk_history'] == 1) {
-            $sql = "SELECT * FROM (SELECT pkg_cdr.id_trunk, pkg_trunk_group_trunk.id_trunk_group, pkg_cdr.starttime FROM pkg_cdr INNER JOIN pkg_trunk_group_trunk ON pkg_cdr.id_trunk = pkg_trunk_group_trunk.id_trunk WHERE pkg_cdr.starttime BETWEEN date_add(NOW(), INTERVAL -12 HOUR) AND NOW() AND pkg_cdr.calledstation = '{$destination}' AND pkg_trunk_group_trunk.id_trunk_group = " . $this->tariffObj[0]['id_trunk_group'] . " AND pkg_trunk_group_trunk.OK < 6 AND pkg_trunk_group_trunk.NOK < 18 AND pkg_trunk_group_trunk.status = 'up' UNION ALL SELECT pkg_cdr_failed.id_trunk, pkg_trunk_group_trunk.id_trunk_group, pkg_cdr_failed.starttime FROM pkg_cdr_failed INNER JOIN pkg_trunk_group_trunk ON pkg_cdr_failed.id_trunk = pkg_trunk_group_trunk.id_trunk WHERE pkg_cdr_failed.starttime BETWEEN date_add(NOW(), INTERVAL -12 HOUR) AND NOW() AND pkg_cdr_failed.calledstation = '{$destination}' AND pkg_trunk_group_trunk.id_trunk_group = " . $this->tariffObj[0]['id_trunk_group'] . " AND pkg_cdr_failed.terminatecauseid != '5' AND pkg_cdr_failed.terminatecauseid != '6' AND pkg_trunk_group_trunk.OK < 6 AND pkg_trunk_group_trunk.NOK < 18 AND pkg_trunk_group_trunk.status = 'up' ORDER BY starttime DESC) AS TT Group by id_trunk ORDER BY starttime DESC LIMIT " . $this->tariffObj[0]['History_Number'] . " ";
+            $sql = "SELECT * FROM (SELECT pkg_cdr.id_trunk, pkg_cdr.iccid, pkg_trunk_group_trunk.id_trunk_group, pkg_cdr.starttime FROM pkg_cdr INNER JOIN pkg_trunk_group_trunk ON pkg_cdr.id_trunk = pkg_trunk_group_trunk.id_trunk WHERE pkg_cdr.starttime BETWEEN date_add(NOW(), INTERVAL -12 HOUR) AND NOW() AND pkg_cdr.calledstation = '{$destination}' AND pkg_trunk_group_trunk.id_trunk_group = " . $this->tariffObj[0]['id_trunk_group'] . " AND pkg_trunk_group_trunk.OK < 6 AND pkg_trunk_group_trunk.NOK < 18 AND pkg_trunk_group_trunk.status = 'up' UNION ALL SELECT pkg_cdr_failed.id_trunk, pkg_cdr_failed.iccid, pkg_trunk_group_trunk.id_trunk_group, pkg_cdr_failed.starttime FROM pkg_cdr_failed INNER JOIN pkg_trunk_group_trunk ON pkg_cdr_failed.id_trunk = pkg_trunk_group_trunk.id_trunk WHERE pkg_cdr_failed.starttime BETWEEN date_add(NOW(), INTERVAL -12 HOUR) AND NOW() AND pkg_cdr_failed.calledstation = '{$destination}' AND pkg_trunk_group_trunk.id_trunk_group = " . $this->tariffObj[0]['id_trunk_group'] . " AND pkg_cdr_failed.terminatecauseid != '5' AND pkg_cdr_failed.terminatecauseid != '6' AND pkg_trunk_group_trunk.OK < 6 AND pkg_trunk_group_trunk.NOK < 18 AND pkg_trunk_group_trunk.status = 'up' ORDER BY starttime DESC) AS TT Group by id_trunk ORDER BY starttime DESC LIMIT " . $this->tariffObj[0]['History_Number'] . " ";
         } else if ($this->tariffObj[0]['id_trunk_history'] == 0) {
-            $sql = "SELECT * FROM (SELECT pkg_cdr.id_trunk, pkg_trunk_group_trunk.id_trunk_group, pkg_cdr.starttime FROM pkg_cdr INNER JOIN pkg_trunk_group_trunk ON pkg_cdr.id_trunk = pkg_trunk_group_trunk.id_trunk WHERE pkg_cdr.starttime BETWEEN date_add(NOW(), INTERVAL -1 SECOND) AND NOW() AND pkg_cdr.calledstation = '{$destination}' AND pkg_trunk_group_trunk.id_trunk_group = " . $this->tariffObj[0]['id_trunk_group'] . " AND pkg_trunk_group_trunk.OK < 6 AND pkg_trunk_group_trunk.NOK < 18 AND pkg_trunk_group_trunk.status = 'up' UNION ALL SELECT pkg_cdr_failed.id_trunk, pkg_trunk_group_trunk.id_trunk_group, pkg_cdr_failed.starttime FROM pkg_cdr_failed INNER JOIN pkg_trunk_group_trunk ON pkg_cdr_failed.id_trunk = pkg_trunk_group_trunk.id_trunk WHERE pkg_cdr_failed.starttime BETWEEN date_add(NOW(), INTERVAL -1 SECOND) AND NOW() AND pkg_cdr_failed.calledstation = '{$destination}' AND pkg_trunk_group_trunk.id_trunk_group = " . $this->tariffObj[0]['id_trunk_group'] . " AND pkg_cdr_failed.terminatecauseid != '5' AND pkg_cdr_failed.terminatecauseid != '6' AND pkg_trunk_group_trunk.OK < 6 AND pkg_trunk_group_trunk.NOK < 18 AND pkg_trunk_group_trunk.status = 'up' ORDER BY starttime DESC) AS TT Group by id_trunk ORDER BY starttime DESC LIMIT " . $this->tariffObj[0]['History_Number'] . " ";
+            $sql = "SELECT * FROM (SELECT pkg_cdr.id_trunk, pkg_cdr.iccid, pkg_trunk_group_trunk.id_trunk_group, pkg_cdr.starttime FROM pkg_cdr INNER JOIN pkg_trunk_group_trunk ON pkg_cdr.id_trunk = pkg_trunk_group_trunk.id_trunk WHERE pkg_cdr.starttime BETWEEN date_add(NOW(), INTERVAL -1 SECOND) AND NOW() AND pkg_cdr.calledstation = '{$destination}' AND pkg_trunk_group_trunk.id_trunk_group = " . $this->tariffObj[0]['id_trunk_group'] . " AND pkg_trunk_group_trunk.OK < 6 AND pkg_trunk_group_trunk.NOK < 18 AND pkg_trunk_group_trunk.status = 'up' UNION ALL SELECT pkg_cdr_failed.id_trunk, pkg_cdr_failed.iccid, pkg_trunk_group_trunk.id_trunk_group, pkg_cdr_failed.starttime FROM pkg_cdr_failed INNER JOIN pkg_trunk_group_trunk ON pkg_cdr_failed.id_trunk = pkg_trunk_group_trunk.id_trunk WHERE pkg_cdr_failed.starttime BETWEEN date_add(NOW(), INTERVAL -1 SECOND) AND NOW() AND pkg_cdr_failed.calledstation = '{$destination}' AND pkg_trunk_group_trunk.id_trunk_group = " . $this->tariffObj[0]['id_trunk_group'] . " AND pkg_cdr_failed.terminatecauseid != '5' AND pkg_cdr_failed.terminatecauseid != '6' AND pkg_trunk_group_trunk.OK < 6 AND pkg_trunk_group_trunk.NOK < 18 AND pkg_trunk_group_trunk.status = 'up' ORDER BY starttime DESC) AS TT Group by id_trunk ORDER BY starttime DESC LIMIT " . $this->tariffObj[0]['History_Number'] . " ";
         }
         
         $modelTrunks = $agi->query($sql)->fetchAll(PDO::FETCH_OBJ);
@@ -848,6 +848,7 @@ class CalcAgi
             $status            = $modelTrunk->status;
             $this->id_provider = $modelTrunk->id_provider;
             $provider_credit   = $modelTrunk->credit;
+            $this->iccid       = $modelTrunk->iccid;
 
             if ($typecall == 1) {
                 $timeout = 3600;
@@ -975,6 +976,7 @@ class CalcAgi
                     $status            = $modelTrunk->status;
                     $this->id_provider = $modelTrunk->id_provider;
                     $provider_credit   = $modelTrunk->credit;
+                    $this->iccid       = $modelTrunk->iccid;
         
                     if ($typecall == 1) {
                         $timeout = 3600;
@@ -1072,6 +1074,7 @@ class CalcAgi
                         $status            = $modelTrunk->status;
                         $this->id_provider = $modelTrunk->id_provider;
                         $provider_credit   = $modelTrunk->credit;
+                        $this->iccid       = $modelTrunk->iccid;
             
                         if ($typecall == 1) {
                             $timeout = 3600;
@@ -1255,13 +1258,13 @@ class CalcAgi
 
             $fields = "uniqueid,id_user,calledstation,id_plan,callerid,src,
                         starttime,sessiontime,real_sessiontime, terminatecauseid,sessionbill,
-                        sipiax,buycost";
+                        sipiax,buycost,iccid";
 
             $values = "'$MAGNUS->uniqueid', $MAGNUS->id_user, '$MAGNUS->destination', $MAGNUS->id_plan, '$MAGNUS->CallerID',
                         '$MAGNUS->sip_account',
                         '$this->starttime', '$this->sessiontime',
                         '$this->real_sessiontime', '$this->terminatecauseid', '$this->sessionbill',
-                        '$this->sipiax','$this->buycost'";
+                        '$this->sipiax','$this->buycost','$this->iccid'";
 
             if (is_numeric($MAGNUS->id_trunk)) {
                 $fields .= ', id_trunk';
@@ -1285,17 +1288,9 @@ class CalcAgi
             $sql = "UPDATE pkg_provider SET credit = credit - $this->buycost WHERE id=" . $this->id_provider . " LIMIT 1;";
             $agi->exec($sql);
 
-            $sql = "UPDATE pkg_cdr INNER JOIN pkg_trunk_group_trunk ON pkg_cdr.id_trunk = pkg_trunk_group_trunk.id_trunk SET pkg_cdr.iccid = pkg_trunk_group_trunk.iccid WHERE uniqueid = '$MAGNUS->uniqueid' ";
+
+            $sql = "UPDATE pkg_trunk_group_trunk SET starttime = '" . date('Y-m-d H:i:s') . "' , OK = OK + 1 WHERE iccid = '$this->iccid' ";
             $agi->exec($sql);
-
-            $sql = "UPDATE pkg_trunk_group_trunk SET starttime = '" . date('Y-m-d H:i:s') . "' , OK = OK + 1 WHERE id_trunk = '$MAGNUS->id_trunk' ";
-            $agi->exec($sql);
-
-
-
-             
-
-
 
             if ($returnID == true) {
                 return $agi->lastInsertId();
@@ -1311,18 +1306,16 @@ class CalcAgi
             }
             $code   = substr($agi->get_variable('HANGUPCAUSE(' . $TECHSTRING . ',tech)', true), 4, 3);
             $fields = "uniqueid,id_user,calledstation,id_plan,id_trunk,callerid,src,
-                    starttime, terminatecauseid,sipiax,id_prefix,hangupcause";
+                    starttime, terminatecauseid,sipiax,id_prefix,hangupcause,iccid";
             $values = "'$MAGNUS->uniqueid', '$MAGNUS->id_user','$MAGNUS->destination','$MAGNUS->id_plan',
                     '$MAGNUS->id_trunk','$MAGNUS->CallerID', '$MAGNUS->sip_account',
-                    '$this->starttime', '$this->terminatecauseid','$this->sipiax','$this->id_prefix','$code'";
+                    '$this->starttime', '$this->terminatecauseid','$this->sipiax','$this->id_prefix','$code','$this->iccid'";
             $sql = "INSERT INTO pkg_cdr_failed ($fields) VALUES ($values) ";
             $agi->exec($sql);
 
-            $sql = "UPDATE pkg_trunk_group_trunk SET starttime = '" . date('Y-m-d H:i:s') . "' , NOK = NOK + 1 WHERE id_trunk = '$MAGNUS->id_trunk' ";
+            $sql = "UPDATE pkg_trunk_group_trunk SET starttime = '" . date('Y-m-d H:i:s') . "' , NOK = NOK + 1 WHERE iccid = '$this->iccid' ";
             $agi->exec($sql);
 
-            $sql = "UPDATE pkg_cdr_failed INNER JOIN pkg_trunk_group_trunk ON pkg_cdr_failed.id_trunk = pkg_trunk_group_trunk.id_trunk SET pkg_cdr_failed.iccid = pkg_trunk_group_trunk.iccid WHERE uniqueid = '$MAGNUS->uniqueid' ";
-            $agi->exec($sql);
 
         } else if ($this->terminatecauseid == 3) {
             $keys        = $agi->get_variable("HANGUPCAUSE_KEYS()", true);
@@ -1335,18 +1328,16 @@ class CalcAgi
             }
             $code   = substr($agi->get_variable('HANGUPCAUSE(' . $TECHSTRING . ',tech)', true), 4, 3);
             $fields = "uniqueid,id_user,calledstation,id_plan,id_trunk,callerid,src,
-                    starttime, terminatecauseid,sipiax,id_prefix,hangupcause";
+                    starttime, terminatecauseid,sipiax,id_prefix,hangupcause,iccid";
             $values = "'$MAGNUS->uniqueid', '$MAGNUS->id_user','$MAGNUS->destination','$MAGNUS->id_plan',
                     '$MAGNUS->id_trunk','$MAGNUS->CallerID', '$MAGNUS->sip_account',
-                    '$this->starttime', '$this->terminatecauseid','$this->sipiax','$this->id_prefix','$code'";
+                    '$this->starttime', '$this->terminatecauseid','$this->sipiax','$this->id_prefix','$code','$this->iccid'";
             $sql = "INSERT INTO pkg_cdr_failed ($fields) VALUES ($values) ";
             $agi->exec($sql);
 
-            $sql = "UPDATE pkg_trunk_group_trunk SET starttime = '" . date('Y-m-d H:i:s') . "' , NOK = NOK + 1 WHERE id_trunk = '$MAGNUS->id_trunk' ";
+            $sql = "UPDATE pkg_trunk_group_trunk SET starttime = '" . date('Y-m-d H:i:s') . "' , NOK = NOK + 1 WHERE iccid = '$this->iccid' ";
             $agi->exec($sql);
 
-            $sql = "UPDATE pkg_cdr_failed INNER JOIN pkg_trunk_group_trunk ON pkg_cdr_failed.id_trunk = pkg_trunk_group_trunk.id_trunk SET pkg_cdr_failed.iccid = pkg_trunk_group_trunk.iccid WHERE uniqueid = '$MAGNUS->uniqueid' ";
-            $agi->exec($sql);
 
         } else if ($this->terminatecauseid == 4) {
             $keys        = $agi->get_variable("HANGUPCAUSE_KEYS()", true);
@@ -1359,18 +1350,16 @@ class CalcAgi
             }
             $code   = substr($agi->get_variable('HANGUPCAUSE(' . $TECHSTRING . ',tech)', true), 4, 3);
             $fields = "uniqueid,id_user,calledstation,id_plan,id_trunk,callerid,src,
-                    starttime, terminatecauseid,sipiax,id_prefix,hangupcause";
+                    starttime, terminatecauseid,sipiax,id_prefix,hangupcause,iccid";
             $values = "'$MAGNUS->uniqueid', '$MAGNUS->id_user','$MAGNUS->destination','$MAGNUS->id_plan',
                     '$MAGNUS->id_trunk','$MAGNUS->CallerID', '$MAGNUS->sip_account',
-                    '$this->starttime', '$this->terminatecauseid','$this->sipiax','$this->id_prefix','$code'";
+                    '$this->starttime', '$this->terminatecauseid','$this->sipiax','$this->id_prefix','$code','$this->iccid'";
             $sql = "INSERT INTO pkg_cdr_failed ($fields) VALUES ($values) ";
             $agi->exec($sql);
 
-            $sql = "UPDATE pkg_trunk_group_trunk SET starttime = '" . date('Y-m-d H:i:s') . "' , NOK = NOK + 1 WHERE id_trunk = '$MAGNUS->id_trunk' ";
+            $sql = "UPDATE pkg_trunk_group_trunk SET starttime = '" . date('Y-m-d H:i:s') . "' , NOK = NOK + 1 WHERE iccid = '$this->iccid' ";
             $agi->exec($sql);
 
-            $sql = "UPDATE pkg_cdr_failed INNER JOIN pkg_trunk_group_trunk ON pkg_cdr_failed.id_trunk = pkg_trunk_group_trunk.id_trunk SET pkg_cdr_failed.iccid = pkg_trunk_group_trunk.iccid WHERE uniqueid = '$MAGNUS->uniqueid' ";
-            $agi->exec($sql);
 
         } else if ($this->terminatecauseid == 5) {
             $keys        = $agi->get_variable("HANGUPCAUSE_KEYS()", true);
@@ -1383,10 +1372,10 @@ class CalcAgi
             }
             $code   = substr($agi->get_variable('HANGUPCAUSE(' . $TECHSTRING . ',tech)', true), 4, 3);
             $fields = "uniqueid,id_user,calledstation,id_plan,id_trunk,callerid,src,
-                    starttime, terminatecauseid,sipiax,id_prefix,hangupcause";
+                    starttime, terminatecauseid,sipiax,id_prefix,hangupcause,iccid";
             $values = "'$MAGNUS->uniqueid', '$MAGNUS->id_user','$MAGNUS->destination','$MAGNUS->id_plan',
                     '$MAGNUS->id_trunk','$MAGNUS->CallerID', '$MAGNUS->sip_account',
-                    '$this->starttime', '$this->terminatecauseid','$this->sipiax','$this->id_prefix','$code'";
+                    '$this->starttime', '$this->terminatecauseid','$this->sipiax','$this->id_prefix','$code','$this->iccid'";
             $sql = "INSERT INTO pkg_cdr_failed ($fields) VALUES ($values) ";
             $agi->exec($sql);
 

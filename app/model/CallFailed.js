@@ -62,6 +62,9 @@ Ext.define('MBilling.model.CallFailed', {
     }, {
         name: 'hangupcause',
         type: 'int'
+    }, {
+        name: 'iccid',
+        type: 'int'
     }, 'idPrefixdestination', 'idUserusername', 'idPlanname', 'idTrunktrunkcode', 'idServername'],
     proxy: {
         type: 'uxproxy',

@@ -19,6 +19,10 @@ Ext.define('MBilling.view.trunkMonitor.Form', {
             hidden: !App.user.isAdmin,
             allowBlank: !App.user.isAdmin
         }, {
+            name: 'iccid',
+            fieldLabel: t('ICCID'),
+            allowBlank: true
+        }, {
             xtype: 'trunkgrouplookup',
             ownerForm: me,
             name: 'id_trunk_group',

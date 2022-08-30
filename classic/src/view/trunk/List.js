@@ -49,6 +49,11 @@ Ext.define('MBilling.view.trunk.List', {
             flex: 2,
             hidden: window.isTablet
         }, {
+            header: t('ICCID'),
+            dataIndex: 'iccid',
+            flex: 3,
+            hidden: window.isTablet
+        },, {
             header: t('Time used'),
             renderer: Helper.Util.formatsecondsToTime,
             dataIndex: 'secondusedreal',

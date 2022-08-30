@@ -54,9 +54,7 @@ Ext.define('MBilling.view.callFailed.List', {
         }, {
             header: t('CallerID'),
             dataIndex: 'callerid',
-            flex: 3,
-            hidden: true,
-            hideable: true
+            flex: 3
         }, {
             header: t('Number'),
             dataIndex: 'calledstation',
@@ -82,10 +80,14 @@ Ext.define('MBilling.view.callFailed.List', {
             dataIndex: 'id_trunk',
             comboFilter: 'trunkcombo',
             header: t('Trunk'),
-            flex: 4,
+            flex: 3,
             hidden: App.user.isClient || App.user.isAgent,
             hideable: !App.user.isClient && !App.user.isAgent
         }, {
+            header: t('ICCID'),
+            dataIndex: 'iccid',
+            flex: 3
+        },, {
             header: t('Status'),
             dataIndex: 'terminatecauseid',
             renderer: Helper.Util.formatDialStatus,
@@ -121,7 +123,8 @@ Ext.define('MBilling.view.callFailed.List', {
             dataIndex: 'id_server',
             comboFilter: 'serverscombo',
             flex: 3,
-            hidden: !App.user.isAdmin
+            hidden: true,
+            hideable: true
         }]
         me.callParent(arguments);
     }

@@ -61,6 +61,10 @@ Ext.define('MBilling.view.trunk.Form', {
                     fieldLabel: t('Remove prefix'),
                     allowBlank: true
                 }, {
+                    name: 'iccid',
+                    fieldLabel: t('ICCID'),
+                    allowBlank: true
+                }, {
                     xtype: 'checkboxgroup',
                     name: 'allow',
                     fieldLabel: t('Codec'),
