@@ -23,6 +23,10 @@ Ext.define('MBilling.view.trunkMonitor.Form', {
             fieldLabel: t('ICCID'),
             allowBlank: true
         }, {
+            xtype: 'statuscombo',
+            name: 'status',
+            fieldLabel: t('Status')
+        }, {
             xtype: 'trunkgrouplookup',
             ownerForm: me,
             name: 'id_trunk_group',
